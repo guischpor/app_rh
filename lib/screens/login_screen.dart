@@ -1,3 +1,4 @@
+import 'package:app_rh/screens/esqueceu_senha_screen.dart';
 import 'package:app_rh/screens/solicitar_acesso_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/build_button.dart';
@@ -35,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
           InputField(
             hint: "Matrícula",
             preffix: Icon(
-              Icons.person,
+              Icons.vpn_key,
               //color: styles.iconColorGrey,
             ),
             textInputType: TextInputType.text,
@@ -63,12 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(
-            height: 0,
-          ),
-          BuildFlatButton(
-            title: "ESQUECI MINHA SENHA",
-            textColor: styles.textColorGrey,
-            onPressed: () => {},
+            height: 15,
           ),
           Container(
             height: 50,
@@ -79,7 +75,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 30,
+          ),
+          BuildFlatButton(
+            title: "ESQUECEU A SUA SENHA? CLIQUE AQUI!",
+            textColor: styles.textColorGrey,
+            onPressed: routeEsqueceuSenhaScreen,
           ),
           BuildFlatButton(
             title: "SOLICITAR ACESSO!",
@@ -92,8 +93,13 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   //funcao route screens
+  void routeEsqueceuSenhaScreen() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => EsqueceuSenhaScreen()));
+  }
+
   void routeSolicitarAcessoScree() async {
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => SolicitarAcessoScreen()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SolicitarAcessoScreen()));
   }
 }

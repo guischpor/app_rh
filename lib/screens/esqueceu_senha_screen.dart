@@ -3,12 +3,12 @@ import 'package:app_rh/widgets/build_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 
-class SolicitarAcessoScreen extends StatefulWidget {
+class EsqueceuSenhaScreen extends StatefulWidget {
   @override
-  _SolicitarAcessoScreenState createState() => _SolicitarAcessoScreenState();
+  _EsqueceuSenhaScreenState createState() => _EsqueceuSenhaScreenState();
 }
 
-class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
+class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
   Styles styles = Styles();
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
       backgroundColor: styles.backgroundScreens,
       appBar: AppBar(
         title: Text(
-          "Solicitar acesso",
+          'Esqueceu a senha',
           style: TextStyle(color: styles.textColorBlue),
         ),
         backgroundColor: Colors.transparent,
@@ -28,34 +28,6 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
         children: [
           SizedBox(
             height: 60,
-          ),
-          InputField(
-            hint: "Matrícula",
-            preffix: Icon(
-              Icons.vpn_key,
-              //color: styles.iconColorGrey,
-            ),
-            textInputType: TextInputType.text,
-            onChanged: (value) => {},
-            obscure: false,
-            enable: true,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          InputField(
-            hint: "Nome",
-            preffix: Icon(
-              Icons.person,
-              //color: styles.iconColorGrey,
-            ),
-            textInputType: TextInputType.text,
-            onChanged: (value) => {},
-            obscure: false,
-            enable: true,
-          ),
-          SizedBox(
-            height: 15,
           ),
           InputField(
             hint: "Email",
@@ -76,7 +48,7 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
             child: BuildButton(
               colorButton: styles.colorButtons,
               onPressed: () => {},
-              title: "SOLICITAR",
+              title: "ENVIAR SENHA",
             ),
           ),
         ],

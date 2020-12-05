@@ -63,7 +63,6 @@ class _FirstScreenState extends State<FirstScreen> {
   }
 
   //function navigation screens
-
   void routeLoginScreen() async {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
@@ -73,7 +72,7 @@ class _FirstScreenState extends State<FirstScreen> {
   }
 
   void routeSolicitarAcessoScreen() async {
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => SolicitarAcessoScreen()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SolicitarAcessoScreen()));
   }
 }
