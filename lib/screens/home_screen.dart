@@ -1,9 +1,18 @@
+import 'package:app_rh/screens/meu_perfil_screen.dart';
+import 'package:app_rh/screens/pendencias_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/menu_drawer/build_drawer.dart';
 import 'package:app_rh/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
-
+import 'contatos_uteis_screens.dart';
+import 'demo_pag_screen.dart';
+import 'envio_doc_screen.dart';
 import 'eventos_reunioes_screen.dart';
+import 'ferias_folgas_screen.dart';
+import 'holerites_emitidos_screen.dart';
+import 'marcador_ponto_screen.dart';
+import 'meu_ponto_screen.dart';
+import 'minhas_solicit_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,32 +21,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Styles styles = Styles();
-
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(
-      fontSize: 30,
-      fontWeight: FontWeight.bold,
-      color: Color.fromRGBO(12, 160, 190, 1.0));
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: marcador_de_ponto',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: meu_perfil',
-      style: optionStyle,
-    ),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,25 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         iconTheme: IconThemeData(color: styles.textColorBlue),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.gps_fixed),
-            label: 'Marcador de Ponto',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Meu Perfil',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: styles.textColorBlue,
-        onTap: _onItemTapped,
       ),
       drawer: BuildDrawer(),
       body: ListView(
@@ -89,61 +53,61 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: "Eventos e Reuniões",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeDemoPagamento,
                 icon: Icons.monetization_on,
                 iconColor: Colors.white,
                 title: "Demonstrativo de Pagamento",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeHolerites,
                 icon: Icons.assignment,
                 iconColor: Colors.white,
                 title: "Holerites Emitidos",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeFeriasFolgas,
                 icon: Icons.group,
                 iconColor: Colors.white,
                 title: "Férias e Folgas",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeMarcadorPonto,
                 icon: Icons.gps_fixed,
                 iconColor: Colors.white,
                 title: "Marcador de Ponto",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeMeuPonto,
                 icon: Icons.person_pin,
                 iconColor: Colors.white,
                 title: "Meu Ponto",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeMinhasSolicit,
                 icon: Icons.file_download,
                 iconColor: Colors.white,
                 title: "Minhas Solicitações",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeEnvioDoc,
                 icon: Icons.file_upload,
                 iconColor: Colors.white,
                 title: "Envio de Documentos",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routePendencias,
                 icon: Icons.attach_file,
                 iconColor: Colors.white,
                 title: "Pendências",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeContatosUteis,
                 icon: Icons.phone,
                 iconColor: Colors.white,
                 title: "Contatos Úteis",
               ),
               MenuItem(
-                onTap: () => {},
+                onTap: _routeMeuPerfil,
                 icon: Icons.person,
                 iconColor: Colors.white,
                 title: "Meu Perfil",
@@ -158,5 +122,55 @@ class _HomeScreenState extends State<HomeScreen> {
   void _routeEventoFerias() async {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => EventosFeriasScreen()));
+  }
+
+  void _routeDemoPagamento() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => DemoPagamentoScreen()));
+  }
+
+  void _routeHolerites() async {
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => HoleritesEmitidosScreen()));
+  }
+
+  void _routeFeriasFolgas() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => FeriasFolgasScreen()));
+  }
+
+  void _routeMarcadorPonto() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MarcadorPontoScreen()));
+  }
+
+  void _routeMeuPonto() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MeuPontoScreen()));
+  }
+
+  void _routeMinhasSolicit() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MinhasSolicitScreen()));
+  }
+
+  void _routeEnvioDoc() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => EnvioDocScreen()));
+  }
+
+  void _routePendencias() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => PendenciaScreen()));
+  }
+
+  void _routeContatosUteis() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => ContatosUteisScreen()));
+  }
+
+  void _routeMeuPerfil() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
   }
 }

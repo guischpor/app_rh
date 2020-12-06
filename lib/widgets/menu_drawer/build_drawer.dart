@@ -1,6 +1,14 @@
+import 'package:app_rh/screens/contatos_uteis_screens.dart';
+import 'package:app_rh/screens/demo_pag_screen.dart';
+import 'package:app_rh/screens/envio_doc_screen.dart';
 import 'package:app_rh/screens/eventos_reunioes_screen.dart';
-import 'package:app_rh/screens/home_screen.dart';
+import 'package:app_rh/screens/ferias_folgas_screen.dart';
+import 'package:app_rh/screens/holerites_emitidos_screen.dart';
 import 'package:app_rh/screens/login_screen.dart';
+import 'package:app_rh/screens/marcador_ponto_screen.dart';
+import 'package:app_rh/screens/meu_ponto_screen.dart';
+import 'package:app_rh/screens/minhas_solicit_screen.dart';
+import 'package:app_rh/screens/pendencias_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/menu_drawer/build_info.dart';
 import 'package:app_rh/widgets/menu_drawer/tiles_drawer.dart';
@@ -35,47 +43,47 @@ class _BuildDrawerState extends State<BuildDrawer> {
           TilesDrawer(
             icon: Icons.monetization_on,
             title: "Demonstrativo de Pagamento",
-            onTap: () => {},
+            onTap: _routeDemoPagamento,
           ),
           TilesDrawer(
             icon: Icons.assignment,
             title: "Holerites Emitidos",
-            onTap: () => {},
+            onTap: _routeHolerites,
           ),
           TilesDrawer(
             icon: Icons.group,
             title: "Férias e Folgas",
-            onTap: () => {},
+            onTap: _routeFeriasFolgas,
           ),
           TilesDrawer(
             icon: Icons.gps_fixed,
             title: "Marcador de Ponto",
-            onTap: () => {},
+            onTap: _routeMarcadorPonto,
           ),
           TilesDrawer(
             icon: Icons.person_pin,
             title: "Meu Ponto",
-            onTap: () => {},
+            onTap: _routeMeuPonto,
           ),
           TilesDrawer(
             icon: Icons.file_download,
             title: "Minhas Solicitações",
-            onTap: () => {},
+            onTap: _routeMinhasSolicit,
           ),
           TilesDrawer(
             icon: Icons.file_upload,
             title: "Envio de Documentos",
-            onTap: () => {},
+            onTap: _routeEnvioDoc,
           ),
           TilesDrawer(
             icon: Icons.attach_file,
             title: "Pendências",
-            onTap: () => {},
+            onTap: _routePendencias,
           ),
           TilesDrawer(
             icon: Icons.phone,
             title: "Contatos Úteis",
-            onTap: () => {},
+            onTap: _routeContatosUteis,
           ),
           TilesDrawer(
             icon: Icons.exit_to_app,
@@ -90,6 +98,51 @@ class _BuildDrawerState extends State<BuildDrawer> {
   void _routeEventoFerias() async {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => EventosFeriasScreen()));
+  }
+
+  void _routeDemoPagamento() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => DemoPagamentoScreen()));
+  }
+
+  void _routeHolerites() async {
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => HoleritesEmitidosScreen()));
+  }
+
+  void _routeFeriasFolgas() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => FeriasFolgasScreen()));
+  }
+
+  void _routeMarcadorPonto() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MarcadorPontoScreen()));
+  }
+
+  void _routeMeuPonto() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MeuPontoScreen()));
+  }
+
+  void _routeMinhasSolicit() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MinhasSolicitScreen()));
+  }
+
+  void _routeEnvioDoc() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => EnvioDocScreen()));
+  }
+
+  void _routePendencias() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => PendenciaScreen()));
+  }
+
+  void _routeContatosUteis() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => ContatosUteisScreen()));
   }
 
   void _routeExit() async {

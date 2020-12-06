@@ -1,13 +1,13 @@
 import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 
-class HeleritesEmitidosScreen extends StatefulWidget {
+class HoleritesEmitidosScreen extends StatefulWidget {
   @override
-  _HeleritesEmitidosScreenState createState() =>
-      _HeleritesEmitidosScreenState();
+  _HoleritesEmitidosScreenState createState() =>
+      _HoleritesEmitidosScreenState();
 }
 
-class _HeleritesEmitidosScreenState extends State<HeleritesEmitidosScreen> {
+class _HoleritesEmitidosScreenState extends State<HoleritesEmitidosScreen> {
   Styles styles = Styles();
   @override
   Widget build(BuildContext context) {
