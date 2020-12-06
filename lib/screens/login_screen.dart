@@ -7,6 +7,8 @@ import 'package:app_rh/widgets/custom_icon_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 
+import 'home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -70,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
             height: 50,
             child: BuildButton(
               colorButton: styles.colorButtons,
-              onPressed: () => {},
+              onPressed: routeHomeScreen,
               title: "ENTRAR",
             ),
           ),
@@ -93,6 +95,11 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   //funcao route screens
+  void routeHomeScreen() async {
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+  }
+
   void routeEsqueceuSenhaScreen() async {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => EsqueceuSenhaScreen()));
