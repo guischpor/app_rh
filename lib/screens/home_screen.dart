@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.symmetric(horizontal: 8.0),
         children: <Widget>[
           SizedBox(
-            height: 32,
+            height: 20,
           ),
           GridView.count(
             shrinkWrap: true,
@@ -36,9 +36,69 @@ class _HomeScreenState extends State<HomeScreen> {
               MenuItem(
                 onTap: () => {},
                 icon: Icons.perm_contact_calendar,
-                iconColor: styles.textColorBlue,
+                iconColor: Colors.white,
                 title: "Eventos e Reuniões",
               ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.monetization_on,
+                iconColor: Colors.white,
+                title: "Demonstrativo de Pagamento",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.assignment,
+                iconColor: Colors.white,
+                title: "Holerites Emitidos",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.group,
+                iconColor: Colors.white,
+                title: "Férias e Folgas",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.gps_fixed,
+                iconColor: Colors.white,
+                title: "Marcador de Ponto",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.person_pin,
+                iconColor: Colors.white,
+                title: "Meu Ponto",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.file_download,
+                iconColor: Colors.white,
+                title: "Minhas Solicitações",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.file_upload,
+                iconColor: Colors.white,
+                title: "Envio de Documentos",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.attach_file,
+                iconColor: Colors.white,
+                title: "Pendências",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.phone,
+                iconColor: Colors.white,
+                title: "Contatos Úteis",
+              ),
+              MenuItem(
+                onTap: () => {},
+                icon: Icons.person,
+                iconColor: Colors.white,
+                title: "Meu Perfil",
+              )
             ],
           )
         ],
