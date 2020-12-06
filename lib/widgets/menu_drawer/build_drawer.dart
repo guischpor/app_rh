@@ -1,3 +1,4 @@
+import 'package:app_rh/screens/eventos_reunioes_screen.dart';
 import 'package:app_rh/screens/home_screen.dart';
 import 'package:app_rh/screens/login_screen.dart';
 import 'package:app_rh/styles/styles.dart';
@@ -29,7 +30,7 @@ class _BuildDrawerState extends State<BuildDrawer> {
           TilesDrawer(
             icon: Icons.perm_contact_calendar,
             title: "Eventos e Reuniões",
-            onTap: () => {},
+            onTap: _routeEventoFerias,
           ),
           TilesDrawer(
             icon: Icons.monetization_on,
@@ -84,6 +85,11 @@ class _BuildDrawerState extends State<BuildDrawer> {
         ],
       ),
     );
+  }
+
+  void _routeEventoFerias() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => EventosFeriasScreen()));
   }
 
   void _routeExit() async {

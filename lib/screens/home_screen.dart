@@ -3,6 +3,8 @@ import 'package:app_rh/widgets/menu_drawer/build_drawer.dart';
 import 'package:app_rh/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
 
+import 'eventos_reunioes_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -81,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisCount: 3,
             children: <Widget>[
               MenuItem(
-                onTap: () => {},
+                onTap: _routeEventoFerias,
                 icon: Icons.perm_contact_calendar,
                 iconColor: Colors.white,
                 title: "Eventos e Reuniões",
@@ -151,5 +153,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  void _routeEventoFerias() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => EventosFeriasScreen()));
   }
 }
