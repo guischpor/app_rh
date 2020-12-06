@@ -1,4 +1,3 @@
-import 'dart:js';
 import 'package:app_rh/screens/home_screen.dart';
 import 'package:app_rh/screens/login_screen.dart';
 import 'package:app_rh/styles/styles.dart';
@@ -7,6 +6,8 @@ import 'package:app_rh/widgets/menu_drawer/tiles_drawer.dart';
 import 'package:flutter/material.dart';
 
 class BuildDrawer extends StatefulWidget {
+  const BuildDrawer({Key key}) : super(key: key);
+
   @override
   _BuildDrawerState createState() => _BuildDrawerState();
 }
@@ -24,11 +25,6 @@ class _BuildDrawerState extends State<BuildDrawer> {
             margin: EdgeInsets.zero,
             padding: EdgeInsets.zero,
             child: BuildInfo(),
-          ),
-          TilesDrawer(
-            icon: Icons.home,
-            title: "Home",
-            onTap: () => {},
           ),
           TilesDrawer(
             icon: Icons.perm_contact_calendar,
@@ -83,19 +79,18 @@ class _BuildDrawerState extends State<BuildDrawer> {
           TilesDrawer(
             icon: Icons.exit_to_app,
             title: "Sair",
-            onTap: () => {},
-            //onTap: _routeExit,
+            onTap: _routeExit,
           ),
         ],
       ),
     );
   }
 
-  // void _routeExit() async {
-  //   Navigator.of(context).pushReplacement(
-  //     MaterialPageRoute(
-  //       builder: (context) => LoginScreen(),
-  //     ),
-  //   );
-  // }
+  void _routeExit() async {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => LoginScreen(),
+      ),
+    );
+  }
 }

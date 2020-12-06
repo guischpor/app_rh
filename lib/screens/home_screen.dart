@@ -10,6 +10,33 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Styles styles = Styles();
+
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+      color: Color.fromRGBO(12, 160, 190, 1.0));
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: marcador_de_ponto',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: meu_perfil',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +50,31 @@ class _HomeScreenState extends State<HomeScreen> {
         shadowColor: Colors.transparent,
         iconTheme: IconThemeData(color: styles.textColorBlue),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.gps_fixed),
+            label: 'Marcador de Ponto',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Meu Perfil',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: styles.textColorBlue,
+        onTap: _onItemTapped,
+      ),
       drawer: BuildDrawer(),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 8.0),
         children: <Widget>[
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           GridView.count(
             shrinkWrap: true,
@@ -101,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: "Meu Perfil",
               )
             ],
-          )
+          ),
         ],
       ),
     );
