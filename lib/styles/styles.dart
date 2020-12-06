@@ -16,7 +16,10 @@ class Styles {
   //Colors Others Screens
   //Color backgroundScreens = Color.fromRGBO(223, 248, 254, 1.0);
   Color backgroundScreens = Color(0xffDFF8FE);
+  Color backgroundDrawerInfo = Color.fromRGBO(12, 160, 190, 1.0);
+
   Color textColorGrey = Color.fromRGBO(108, 113, 119, 1.0);
   Color textColorBlue = Color.fromRGBO(12, 160, 190, 1.0);
   Color iconColorGrey = Color.fromRGBO(108, 113, 119, 1.0);
+  Color iconColorBlue = Color.fromRGBO(12, 160, 190, 1.0);
 }

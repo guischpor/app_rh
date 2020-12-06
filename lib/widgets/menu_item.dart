@@ -43,3 +43,41 @@ class MenuItem extends StatelessWidget {
     );
   }
 }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//         onTap: onTap,
+//         child: Container(
+//           //padding: EdgeInsets.all(8),
+//           child: Column(
+//             children: <Widget>[
+//               Card(
+//                 color: styles.textColorBlue,
+//                 child: Container(
+//                   //padding: EdgeInsets.all(4),
+//                   child: Column(
+//                     children: <Widget>[
+//                       Icon(
+//                         icon,
+//                         color: iconColor,
+//                         size: 55,
+//                       ),
+//                       SizedBox(
+//                         height: 5,
+//                       ),
+//                       Text(
+//                         title,
+//                         style: TextStyle(
+//                             color: Colors.white, fontWeight: FontWeight.bold),
+//                         textAlign: TextAlign.center,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               )
+//             ],
+//           ),
+//         ));
+//   }
+// }

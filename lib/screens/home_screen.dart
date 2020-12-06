@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/menu_drawer/build_drawer.dart';
 import 'package:app_rh/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         shadowColor: Colors.transparent,
         iconTheme: IconThemeData(color: styles.textColorBlue),
       ),
-      drawer: null,
+      drawer: BuildDrawer(),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 8.0),
         children: <Widget>[
