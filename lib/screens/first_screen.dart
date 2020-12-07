@@ -16,50 +16,57 @@ class _FirstScreenState extends State<FirstScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var size = mediaQuery.size;
+
     return Scaffold(
-        body: Container(
-      decoration: BoxDecoration(
-        gradient: styles.backgroundGradientScreen,
-      ),
-      child: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.all(16),
-          children: [
-            SizedBox(
-              height: 150,
-            ),
-            Container(
-              height: 140,
-              child: Image(
-                image: AssetImage('assets/images/logo_rh_branco.png'),
-              ),
-            ),
-            SizedBox(
-              height: 180,
-            ),
-            Container(
-              height: 50,
-              child: BuildButton(
-                colorButton: styles.buttonBlue,
-                onPressed: routeLoginScreen,
-                title: "LOGIN",
-              ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-              height: 50,
-              child: BuildButton(
-                colorButton: styles.buttonBlue,
-                onPressed: routeSolicitarAcessoScreen,
-                title: "SOLICITAR ACESSO",
-              ),
-            ),
-          ],
-        ),
-      ),
-    ));
+      body: Container(
+          decoration: BoxDecoration(
+            gradient: styles.backgroundGradientScreen,
+          ),
+          width: size.width,
+          height: size.height,
+          child: LayoutBuilder(
+            builder: (_, constrains) {
+              return ListView(
+                padding: EdgeInsets.all(16),
+                children: [
+                  SizedBox(
+                    height: constrains.maxHeight * 0.3,
+                  ),
+                  Container(
+                    height: constrains.maxHeight * .2,
+                    child: Image(
+                      image: AssetImage('assets/images/logo_rh_branco.png'),
+                    ),
+                  ),
+                  SizedBox(
+                    height: constrains.maxHeight * 0.25,
+                  ),
+                  Container(
+                    height: 50,
+                    child: BuildButton(
+                      colorButton: styles.buttonBlue,
+                      onPressed: routeLoginScreen,
+                      title: "LOGIN",
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    height: 50,
+                    child: BuildButton(
+                      colorButton: styles.buttonBlue,
+                      onPressed: routeSolicitarAcessoScreen,
+                      title: "SOLICITAR ACESSO",
+                    ),
+                  ),
+                ],
+              );
+            },
+          )),
+    );
   }
 
   //function navigation screens

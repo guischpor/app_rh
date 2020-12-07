@@ -16,80 +16,92 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   Styles styles = Styles();
+
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var size = mediaQuery.size;
+
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: [
-          SizedBox(
-            height: 60,
-          ),
-          Container(
-            height: 140,
-            child: Image(
-              image: AssetImage('assets/images/logo_rh_azul.png'),
-            ),
-          ),
-          SizedBox(
-            height: 60,
-          ),
-          InputField(
-            hint: "Matrícula",
-            preffix: Icon(
-              Icons.vpn_key,
-              //color: styles.iconColorGrey,
-            ),
-            textInputType: TextInputType.text,
-            onChanged: (value) => {},
-            obscure: false,
-            enable: true,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          InputField(
-            hint: "Senha",
-            preffix: Icon(
-              Icons.lock,
-              //color: styles.iconColorGrey,
-            ),
-            textInputType: TextInputType.text,
-            onChanged: (value) => {},
-            obscure: true,
-            enable: true,
-            suffix: CustomIconButton(
-              radius: 32,
-              iconData: Icons.visibility,
-              onTap: () => {},
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Container(
-            height: 50,
-            child: BuildButton(
-              colorButton: styles.colorButtons,
-              onPressed: routeHomeScreen,
-              title: "ENTRAR",
-            ),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          BuildFlatButton(
-            title: "ESQUECEU A SUA SENHA? CLIQUE AQUI!",
-            textColor: styles.textColorGrey,
-            onPressed: routeEsqueceuSenhaScreen,
-          ),
-          BuildFlatButton(
-            title: "SOLICITAR ACESSO!",
-            textColor: styles.textColorGrey,
-            onPressed: routeSolicitarAcessoScree,
-          ),
-        ],
+      body: Container(
+        height: mediaQuery.size.height,
+        width: mediaQuery.size.width,
+        child: LayoutBuilder(
+          builder: (_, constrains) {
+            return ListView(
+              padding: EdgeInsets.all(16),
+              children: [
+                SizedBox(
+                  height: constrains.maxHeight * 0.12,
+                ),
+                Container(
+                  height: constrains.maxHeight * .2,
+                  child: Image(
+                    image: AssetImage('assets/images/logo_rh_azul.png'),
+                  ),
+                ),
+                SizedBox(
+                  height: constrains.maxHeight * 0.12,
+                ),
+                InputField(
+                  hint: "Matrícula",
+                  preffix: Icon(
+                    Icons.vpn_key,
+                    //color: styles.iconColorGrey,
+                  ),
+                  textInputType: TextInputType.text,
+                  onChanged: (value) => {},
+                  obscure: false,
+                  enable: true,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                InputField(
+                  hint: "Senha",
+                  preffix: Icon(
+                    Icons.lock,
+                    //color: styles.iconColorGrey,
+                  ),
+                  textInputType: TextInputType.text,
+                  onChanged: (value) => {},
+                  obscure: true,
+                  enable: true,
+                  suffix: CustomIconButton(
+                    radius: 32,
+                    iconData: Icons.visibility,
+                    onTap: () => {},
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  height: 50,
+                  child: BuildButton(
+                    colorButton: styles.colorButtons,
+                    onPressed: routeHomeScreen,
+                    title: "ENTRAR",
+                  ),
+                ),
+                SizedBox(
+                  height: constrains.maxHeight * 0.05,
+                ),
+                BuildFlatButton(
+                  title: "ESQUECEU A SUA SENHA? CLIQUE AQUI!",
+                  textColor: styles.textColorGrey,
+                  onPressed: routeEsqueceuSenhaScreen,
+                ),
+                BuildFlatButton(
+                  title: "SOLICITAR ACESSO!",
+                  textColor: styles.textColorGrey,
+                  onPressed: routeSolicitarAcessoScree,
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

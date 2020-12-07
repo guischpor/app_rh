@@ -12,6 +12,9 @@ class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
   Styles styles = Styles();
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var size = mediaQuery.size;
+
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
       appBar: AppBar(
@@ -23,36 +26,43 @@ class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
         shadowColor: Colors.transparent,
         iconTheme: IconThemeData(color: styles.textColorBlue),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: [
-          SizedBox(
-            height: 60,
-          ),
-          InputField(
-            hint: "Email",
-            preffix: Icon(
-              Icons.email,
-              //color: styles.iconColorGrey,
-            ),
-            textInputType: TextInputType.text,
-            onChanged: (value) => {},
-            obscure: false,
-            enable: true,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Container(
-            height: 50,
-            child: BuildButton(
-              colorButton: styles.colorButtons,
-              onPressed: () => {},
-              title: "ENVIAR SENHA",
-            ),
-          ),
-        ],
-      ),
+      body: Container(
+          width: mediaQuery.size.width,
+          height: mediaQuery.size.height,
+          child: LayoutBuilder(
+            builder: (_, constrains) {
+              return ListView(
+                padding: EdgeInsets.all(16),
+                children: [
+                  SizedBox(
+                    height: constrains.maxHeight * 0.10,
+                  ),
+                  InputField(
+                    hint: "Email",
+                    preffix: Icon(
+                      Icons.email,
+                      //color: styles.iconColorGrey,
+                    ),
+                    textInputType: TextInputType.text,
+                    onChanged: (value) => {},
+                    obscure: false,
+                    enable: true,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    height: 50,
+                    child: BuildButton(
+                      colorButton: styles.colorButtons,
+                      onPressed: () => {},
+                      title: "ENVIAR SENHA",
+                    ),
+                  ),
+                ],
+              );
+            },
+          )),
     );
   }
 }
