@@ -21,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Styles styles = Styles();
-
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
@@ -37,6 +37,82 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         iconTheme: IconThemeData(color: styles.textColorBlue),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: styles.iconColorBlue,
+        unselectedItemColor: styles.textColorGrey,
+        selectedFontSize: 14,
+        currentIndex: _currentIndex,
+        type: BottomNavigationBarType.shifting,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.gps_fixed,
+              //color: styles.textColorGrey,
+            ),
+            label: 'Marcar Ponto',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_pin,
+              //color: styles.textColorGrey,
+            ),
+            label: 'Meu Ponto',
+            //backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              //color: styles.iconColorGrey,
+            ),
+            label: 'Home',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.perm_contact_calendar,
+              //color: styles.textColorGrey,
+            ),
+            label: 'Eventos',
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              //color: styles.textColorGrey,
+            ),
+            label: 'Meu Perfil',
+            backgroundColor: Colors.white,
+          ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+            switch (_currentIndex) {
+              case 0:
+                {
+                  _routeMarcadorPonto();
+                }
+                break;
+              case 1:
+                {
+                  _routeMeuPonto();
+                }
+                break;
+              case 3:
+                {
+                  _routeEventoFerias();
+                }
+                break;
+              case 4:
+                {
+                  _routeMeuPerfil();
+                }
+                break;
+            }
+          });
+        },
       ),
       drawer: BuildDrawer(),
       body: Container(
@@ -195,3 +271,5 @@ class _HomeScreenState extends State<HomeScreen> {
         .push(MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
   }
 }
+
+//

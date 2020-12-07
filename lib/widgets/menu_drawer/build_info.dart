@@ -13,12 +13,12 @@ class _BuildInfoState extends State<BuildInfo> {
     return Center(
       child: Container(
         padding: EdgeInsets.all(21),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Row(
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              height: 80,
-              width: 80,
+              height: 90,
+              width: 90,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(
@@ -35,21 +35,21 @@ class _BuildInfoState extends State<BuildInfo> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 5),
-              alignment: Alignment.center,
+              padding: EdgeInsets.only(left: 12),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     "João da Silva",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 15,
+                      fontSize: 20,
                     ),
                   ),
                   Text(
                     "ANALISTA DE TI",
-                    style: TextStyle(color: Colors.white, fontSize: 10),
+                    style: TextStyle(color: Colors.white, fontSize: 12),
                   ),
                 ],
               ),
