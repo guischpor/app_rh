@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {
   final String title;
+  final Color colorTitle;
   final IconData icon;
   final Color iconColor;
   final Function onTap;
 
-  MenuItem({this.title, this.icon, this.iconColor, this.onTap});
+  MenuItem(
+      {this.title, this.colorTitle, this.icon, this.iconColor, this.onTap});
 
   final styles = Styles();
 
@@ -15,69 +17,42 @@ class MenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Card(
-        color: styles.textColorBlue,
-        margin: EdgeInsets.all(10),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Icon(
-                icon,
-                color: iconColor,
-                size: 55,
+      child: SizedBox(
+        width: 90,
+        height: 90,
+        child: Card(
+          color: styles.iconColorBlue,
+          elevation: 2.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    icon,
+                    color: iconColor,
+                    size: 55,
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    title,
+                    style: TextStyle(
+                        color: colorTitle, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
               ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                title,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//         onTap: onTap,
-//         child: Container(
-//           //padding: EdgeInsets.all(8),
-//           child: Column(
-//             children: <Widget>[
-//               Card(
-//                 color: styles.textColorBlue,
-//                 child: Container(
-//                   //padding: EdgeInsets.all(4),
-//                   child: Column(
-//                     children: <Widget>[
-//                       Icon(
-//                         icon,
-//                         color: iconColor,
-//                         size: 55,
-//                       ),
-//                       SizedBox(
-//                         height: 5,
-//                       ),
-//                       Text(
-//                         title,
-//                         style: TextStyle(
-//                             color: Colors.white, fontWeight: FontWeight.bold),
-//                         textAlign: TextAlign.center,
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               )
-//             ],
-//           ),
-//         ));
-//   }
-// }
