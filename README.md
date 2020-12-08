@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Esse projeto está em desenvolvimento, e o modelo do aplicatico foi baseado no ramo comercial de Recursos Humanos. Esse sistema será usado apenas para uso interno das empresas, para gerir e tornar as informações mais precisas em um único aplicativo, com esse app os funcionários vão conseguir, verificar e consultar pagamentos de salários, férias, envio de documentos pessoais e profissionais, reuniões e eventos e etc..
+Esse projeto está em desenvolvimento, e o modelo do aplicativo foi baseado no ramo comercial de Recursos Humanos. Esse sistema será usado apenas para uso interno das empresas, para gerir e tornar as informações mais precisas em um único aplicativo, com esse app os funcionários vão conseguir, verificar e consultar pagamentos de salários, férias, envio de documentos pessoais e profissionais, reuniões e eventos e etc..
 
 O aplicativo está sendo construído em Flutter, o backend ainda não foi definido, está em fase de pesquisa!
 
