@@ -100,6 +100,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   _routeMeuPonto();
                 }
                 break;
+              case 2:
+                {
+                  _routeEventoFerias();
+                }
+                break;
               case 3:
                 {
                   _routeEventoFerias();
@@ -120,95 +125,88 @@ class _HomeScreenState extends State<HomeScreen> {
           height: size.height,
           child: FutureBuilder(
             builder: (_, constrains) {
-              return ListView(
+              return GridView.count(
+                //shrinkWrap: true,
+                crossAxisCount: 3,
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 children: <Widget>[
-                  SizedBox(
-                    height: 10,
+                  MenuItem(
+                    onTap: _routeEventoFerias,
+                    icon: Icons.perm_contact_calendar,
+                    iconColor: Colors.white,
+                    title: "Eventos e Reuniões",
+                    colorTitle: Colors.white,
                   ),
-                  GridView.count(
-                    shrinkWrap: true,
-                    crossAxisCount: 3,
-                    children: <Widget>[
-                      MenuItem(
-                        onTap: _routeEventoFerias,
-                        icon: Icons.perm_contact_calendar,
-                        iconColor: Colors.white,
-                        title: "Eventos e Reuniões",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeDemoPagamento,
-                        icon: Icons.monetization_on,
-                        iconColor: Colors.white,
-                        title: "Demonstrativo de Pagamento",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeHolerites,
-                        icon: Icons.assignment,
-                        iconColor: Colors.white,
-                        title: "Holerites Emitidos",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeFeriasFolgas,
-                        icon: Icons.group,
-                        iconColor: Colors.white,
-                        title: "Férias e Folgas",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeMarcadorPonto,
-                        icon: Icons.gps_fixed,
-                        iconColor: Colors.white,
-                        title: "Marcador de Ponto",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeMeuPonto,
-                        icon: Icons.person_pin,
-                        iconColor: Colors.white,
-                        title: "Meu Ponto",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeMinhasSolicit,
-                        icon: Icons.file_download,
-                        iconColor: Colors.white,
-                        title: "Minhas Solicitações",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeEnvioDoc,
-                        icon: Icons.file_upload,
-                        iconColor: Colors.white,
-                        title: "Envio de Documentos",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routePendencias,
-                        icon: Icons.attach_file,
-                        iconColor: Colors.white,
-                        title: "Pendências",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeContatosUteis,
-                        icon: Icons.phone,
-                        iconColor: Colors.white,
-                        title: "Contatos Úteis",
-                        colorTitle: Colors.white,
-                      ),
-                      MenuItem(
-                        onTap: _routeMeuPerfil,
-                        icon: Icons.person,
-                        iconColor: Colors.white,
-                        title: "Meu Perfil",
-                        colorTitle: Colors.white,
-                      )
-                    ],
+                  MenuItem(
+                    onTap: _routeDemoPagamento,
+                    icon: Icons.monetization_on,
+                    iconColor: Colors.white,
+                    title: "Demonstrativo de Pagamento",
+                    colorTitle: Colors.white,
                   ),
+                  MenuItem(
+                    onTap: _routeHolerites,
+                    icon: Icons.assignment,
+                    iconColor: Colors.white,
+                    title: "Holerites Emitidos",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routeFeriasFolgas,
+                    icon: Icons.group,
+                    iconColor: Colors.white,
+                    title: "Férias e Folgas",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routeMarcadorPonto,
+                    icon: Icons.gps_fixed,
+                    iconColor: Colors.white,
+                    title: "Marcador de Ponto",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routeMeuPonto,
+                    icon: Icons.person_pin,
+                    iconColor: Colors.white,
+                    title: "Meu Ponto",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routeMinhasSolicit,
+                    icon: Icons.file_download,
+                    iconColor: Colors.white,
+                    title: "Minhas Solicitações",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routeEnvioDoc,
+                    icon: Icons.file_upload,
+                    iconColor: Colors.white,
+                    title: "Envio de Documentos",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routePendencias,
+                    icon: Icons.attach_file,
+                    iconColor: Colors.white,
+                    title: "Pendências",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routeContatosUteis,
+                    icon: Icons.phone,
+                    iconColor: Colors.white,
+                    title: "Contatos Úteis",
+                    colorTitle: Colors.white,
+                  ),
+                  MenuItem(
+                    onTap: _routeMeuPerfil,
+                    icon: Icons.person,
+                    iconColor: Colors.white,
+                    title: "Meu Perfil",
+                    colorTitle: Colors.white,
+                  )
                 ],
               );
             },
