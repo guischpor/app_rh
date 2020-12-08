@@ -100,11 +100,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   _routeMeuPonto();
                 }
                 break;
-              case 2:
-                {
-                  _routeEventoFerias();
-                }
-                break;
               case 3:
                 {
                   _routeEventoFerias();

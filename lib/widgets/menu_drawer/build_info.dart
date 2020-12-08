@@ -1,3 +1,4 @@
+import 'package:app_rh/screens/meu_perfil_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -51,6 +52,19 @@ class _BuildInfoState extends State<BuildInfo> {
                     "ANALISTA DE TI",
                     style: TextStyle(color: Colors.white, fontSize: 12),
                   ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  InkWell(
+                    onTap: _routeMeuPerfil,
+                    child: Text(
+                      "EDITAR PERFIL",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -58,5 +72,10 @@ class _BuildInfoState extends State<BuildInfo> {
         ),
       ),
     );
+  }
+
+  void _routeMeuPerfil() async {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
   }
 }

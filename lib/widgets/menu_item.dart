@@ -15,7 +15,8 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      borderRadius: BorderRadius.circular(8),
       onTap: onTap,
       child: SizedBox(
         width: 90,
