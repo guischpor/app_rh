@@ -29,9 +29,10 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.white),
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
       child: TextField(
         obscureText: obscure,
         controller: controller,
@@ -44,6 +45,7 @@ class InputField extends StatelessWidget {
           fontWeight: FontWeight.w600,
         ),
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(17),
           border: InputBorder.none,
           hintText: hint,
           hintStyle: TextStyle(

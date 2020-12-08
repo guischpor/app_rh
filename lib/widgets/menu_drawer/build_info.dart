@@ -61,7 +61,7 @@ class _BuildInfoState extends State<BuildInfo> {
                       "EDITAR PERFIL",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 12,
+                          fontSize: 10,
                           fontWeight: FontWeight.w500),
                     ),
                   )

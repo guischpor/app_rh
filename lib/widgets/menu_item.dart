@@ -3,13 +3,20 @@ import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {
   final String title;
+  final double sizeTitle;
   final Color colorTitle;
   final IconData icon;
   final Color iconColor;
   final Function onTap;
 
-  MenuItem(
-      {this.title, this.colorTitle, this.icon, this.iconColor, this.onTap});
+  MenuItem({
+    this.title,
+    this.sizeTitle,
+    this.colorTitle,
+    this.icon,
+    this.iconColor,
+    this.onTap,
+  });
 
   final styles = Styles();
 
@@ -37,7 +44,7 @@ class MenuItem extends StatelessWidget {
                   Icon(
                     icon,
                     color: iconColor,
-                    size: 55,
+                    size: 50,
                   ),
                   SizedBox(
                     height: 5,
@@ -45,7 +52,10 @@ class MenuItem extends StatelessWidget {
                   Text(
                     title,
                     style: TextStyle(
-                        color: colorTitle, fontWeight: FontWeight.bold),
+                        color: colorTitle,
+                        fontWeight: FontWeight.bold,
+                        //fontSize: sizeTitle,
+                        fontSize: 13),
                     textAlign: TextAlign.center,
                   )
                 ],
