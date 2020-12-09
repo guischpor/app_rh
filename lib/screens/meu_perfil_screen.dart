@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/build_button_icon.dart';
 import 'package:app_rh/widgets/build_card_profile.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +42,23 @@ class _MeuPerfilScreenState extends State<MeuPerfilScreen> {
               setor: "Fábrica de Software",
               cargo: "Analista de TI",
               matricula: "0558985",
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 50,
+              child: BuildButtonIcon(
+                colorButton: styles.colorButtons,
+                title: "ALTERAR DADOS",
+                iconRight: Icons.keyboard_arrow_right,
+                iconColor: Colors.white,
+                iconSize: 30,
+                onPressed: () => {},
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
           ],
         ),
