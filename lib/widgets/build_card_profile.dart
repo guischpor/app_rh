@@ -47,7 +47,7 @@ class BuildCardProfile extends StatelessWidget {
             height: 200,
             width: 400,
             child: Card(
-              color: styles.buttonBlue,
+              color: styles.iconColorBlue,
               elevation: 2.0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
