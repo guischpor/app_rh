@@ -1,5 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
-import 'package:app_rh/widgets/menu_drawer/build_card.contatos.dart';
+import 'package:app_rh/widgets/build_card.contatos.dart';
 import 'package:flutter/material.dart';
 
 class ContatosUteisScreen extends StatefulWidget {
