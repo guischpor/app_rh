@@ -1,7 +1,6 @@
 import 'package:app_rh/screens/menu_screen.dart';
 import 'package:app_rh/screens/meu_perfil_screen.dart';
 import 'package:app_rh/styles/styles.dart';
-import 'package:app_rh/widgets/menu_drawer/build_drawer.dart';
 import 'package:flutter/material.dart';
 import 'eventos_reunioes_screen.dart';
 import 'marcador_ponto_screen.dart';
