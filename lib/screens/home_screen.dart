@@ -15,30 +15,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   Styles styles = Styles();
   int _currentIndex = 0;
-  Widget callPage(int currentIndex) {
-    switch (currentIndex) {
-      case 0:
-        return MarcadorPontoScreen();
-      case 1:
-        return MeuPontoScreen();
-      case 2:
-        return MenuScreen();
-      case 3:
-        return EventosReunioesScreen();
-      case 4:
-        return MeuPerfilScreen();
-        break;
-      default:
-        return MenuScreen();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
-    //var mediaQuery = MediaQuery.of(context);
-    //var size = mediaQuery.size;
-
     return Scaffold(
+      body: callPage(_currentIndex),
       backgroundColor: styles.backgroundScreens,
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: styles.iconColorBlue,
@@ -49,9 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.gps_fixed,
+              Icons.home,
             ),
-            label: 'Marcar Ponto',
+            label: 'Home',
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
@@ -62,10 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home,
-              //color: styles.iconColorGrey,
+              Icons.gps_fixed,
             ),
-            label: 'Home',
+            label: 'Marcar Ponto',
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
@@ -91,8 +71,28 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
       ),
-      drawer: BuildDrawer(),
-      body: callPage(_currentIndex),
     );
+  }
+
+  Widget callPage(int currentIndex) {
+    switch (currentIndex) {
+      case 0:
+        return MenuScreen();
+        break;
+      case 1:
+        return MeuPontoScreen();
+        break;
+      case 2:
+        return MarcadorPontoScreen();
+        break;
+      case 3:
+        return EventosReunioesScreen();
+        break;
+      case 4:
+        return MeuPerfilScreen();
+        break;
+      default:
+        return MenuScreen();
+    }
   }
 }
