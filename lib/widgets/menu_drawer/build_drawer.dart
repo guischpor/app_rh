@@ -38,7 +38,7 @@ class _BuildDrawerState extends State<BuildDrawer> {
           TilesDrawer(
             icon: Icons.perm_contact_calendar,
             title: "Eventos e Reuniões",
-            onTap: _routeEventoFerias,
+            onTap: _routeEventoReunioes,
           ),
           TilesDrawer(
             icon: Icons.monetization_on,
@@ -95,9 +95,9 @@ class _BuildDrawerState extends State<BuildDrawer> {
     );
   }
 
-  void _routeEventoFerias() async {
+  void _routeEventoReunioes() async {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => EventosFeriasScreen()));
+        .push(MaterialPageRoute(builder: (context) => EventosReunioesScreen()));
   }
 
   void _routeDemoPagamento() async {
