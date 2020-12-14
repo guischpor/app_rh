@@ -1,19 +1,11 @@
 import 'package:app_rh/screens/menu_screen.dart';
 import 'package:app_rh/screens/meu_perfil_screen.dart';
-import 'package:app_rh/screens/pendencias_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/menu_drawer/build_drawer.dart';
-import 'package:app_rh/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
-import 'contatos_uteis_screens.dart';
-import 'demo_pag_screen.dart';
-import 'envio_doc_screen.dart';
 import 'eventos_reunioes_screen.dart';
-import 'ferias_folgas_screen.dart';
-import 'holerites_emitidos_screen.dart';
 import 'marcador_ponto_screen.dart';
 import 'meu_ponto_screen.dart';
-import 'minhas_solicit_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -102,60 +94,5 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: BuildDrawer(),
       body: callPage(_currentIndex),
     );
-  }
-
-  void _routeEventoReunioes() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => EventosReunioesScreen()));
-  }
-
-  void _routeDemoPagamento() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => DemoPagamentoScreen()));
-  }
-
-  void _routeHolerites() async {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => HoleritesEmitidosScreen()));
-  }
-
-  void _routeFeriasFolgas() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => FeriasFolgasScreen()));
-  }
-
-  void _routeMarcadorPonto() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MarcadorPontoScreen()));
-  }
-
-  void _routeMeuPonto() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MeuPontoScreen()));
-  }
-
-  void _routeMinhasSolicit() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MinhasSolicitScreen()));
-  }
-
-  void _routeEnvioDoc() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => EnvioDocScreen()));
-  }
-
-  void _routePendencias() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => PendenciaScreen()));
-  }
-
-  void _routeContatosUteis() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ContatosUteisScreen()));
-  }
-
-  void _routeMeuPerfil() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
   }
 }

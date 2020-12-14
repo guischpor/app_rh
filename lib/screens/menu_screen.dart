@@ -21,24 +21,6 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   Styles styles = Styles();
-  //int _currentIndex = 0;
-  // Widget callPage(int currentIndex) {
-  //   switch (currentIndex) {
-  //     case 0:
-  //       return MarcadorPontoScreen();
-  //     case 1:
-  //       return MeuPontoScreen();
-  //     case 2:
-  //       return HomeScreen();
-  //     case 3:
-  //       return EventosReunioesScreen();
-  //     case 4:
-  //       return MeuPerfilScreen();
-  //       break;
-  //     default:
-  //       return HomeScreen();
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
