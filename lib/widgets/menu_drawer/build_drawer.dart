@@ -1,14 +1,3 @@
-import 'package:app_rh/screens/contatos_uteis_screens.dart';
-import 'package:app_rh/screens/demo_pag_screen.dart';
-import 'package:app_rh/screens/envio_doc_screen.dart';
-import 'package:app_rh/screens/eventos_reunioes_screen.dart';
-import 'package:app_rh/screens/ferias_folgas_screen.dart';
-import 'package:app_rh/screens/holerites_emitidos_screen.dart';
-import 'package:app_rh/screens/login_screen.dart';
-import 'package:app_rh/screens/marcador_ponto_screen.dart';
-import 'package:app_rh/screens/meu_ponto_screen.dart';
-import 'package:app_rh/screens/minhas_solicit_screen.dart';
-import 'package:app_rh/screens/pendencias_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/menu_drawer/build_info.dart';
 import 'package:app_rh/widgets/menu_drawer/tiles_drawer.dart';
@@ -96,60 +85,46 @@ class _BuildDrawerState extends State<BuildDrawer> {
   }
 
   void _routeEventoReunioes() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => EventosReunioesScreen()));
+    Navigator.pushNamed(context, 'eventos_reunioes');
   }
 
   void _routeDemoPagamento() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => DemoPagamentoScreen()));
+    Navigator.pushNamed(context, 'demo_pagamento');
   }
 
   void _routeHolerites() async {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => HoleritesEmitidosScreen()));
+    Navigator.pushNamed(context, 'holerite_emitidos');
   }
 
   void _routeFeriasFolgas() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => FeriasFolgasScreen()));
+    Navigator.pushNamed(context, 'ferias_folgas');
   }
 
   void _routeMarcadorPonto() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MarcadorPontoScreen()));
+    Navigator.pushNamed(context, 'marcador_ponto');
   }
 
   void _routeMeuPonto() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MeuPontoScreen()));
+    Navigator.pushNamed(context, 'meu_ponto');
   }
 
   void _routeMinhasSolicit() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MinhasSolicitScreen()));
+    Navigator.pushNamed(context, 'minhas_solicitacoes');
   }
 
   void _routeEnvioDoc() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => EnvioDocScreen()));
+    Navigator.pushNamed(context, 'envio_documentos');
   }
 
   void _routePendencias() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => PendenciaScreen()));
+    Navigator.pushNamed(context, 'pendencia');
   }
 
   void _routeContatosUteis() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ContatosUteisScreen()));
+    Navigator.pushNamed(context, 'contatos_uteis');
   }
 
   void _routeExit() async {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => LoginScreen(),
-      ),
-    );
+    Navigator.pushNamed(context, 'login');
   }
 }
