@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 class BuildCardContatos extends StatelessWidget {
   final IconData iconData;
+  final int index;
+  final dynamic data;
   final Color iconColor;
   final double iconSize;
   final double textSize;
@@ -20,6 +22,8 @@ class BuildCardContatos extends StatelessWidget {
     this.setor,
     this.email,
     this.phone,
+    this.index,
+    this.data,
   });
 
   final styles = Styles();

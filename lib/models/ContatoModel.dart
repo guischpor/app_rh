@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
+
 class ContatoModel {
   int id;
-  String icon;
+  IconData icon;
   String gerente;
   String setor;
   String email;
