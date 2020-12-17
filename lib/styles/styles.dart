@@ -20,6 +20,7 @@ class Styles {
 
   Color textColorGrey = Color.fromRGBO(108, 113, 119, 1.0);
   Color textColorBlue = Color.fromRGBO(12, 160, 190, 1.0);
+  Color textColorAlert = Color.fromRGBO(56, 57, 58, 1.0);
   Color iconColorGrey = Color.fromRGBO(108, 113, 119, 1.0);
   Color iconColorBlue = Color.fromRGBO(12, 160, 190, 1.0);
 }
