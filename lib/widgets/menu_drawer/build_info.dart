@@ -75,7 +75,6 @@ class _BuildInfoState extends State<BuildInfo> {
   }
 
   void _routeMeuPerfil() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
+    Navigator.pushNamed(context, 'meu_perfil');
   }
 }

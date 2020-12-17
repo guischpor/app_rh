@@ -46,20 +46,20 @@ class _MeuPerfilScreenState extends State<MeuPerfilScreen> {
             SizedBox(
               height: 10,
             ),
-            Container(
-              height: 50,
-              child: BuildButtonIcon(
-                colorButton: styles.colorButtons,
-                title: "ALTERAR DADOS",
-                iconRight: Icons.keyboard_arrow_right,
-                iconColor: Colors.white,
-                iconSize: 30,
-                onPressed: () => {},
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
+            // Container(
+            //   height: 50,
+            //   child: BuildButtonIcon(
+            //     colorButton: styles.colorButtons,
+            //     title: "ALTERAR DADOS",
+            //     iconRight: Icons.keyboard_arrow_right,
+            //     iconColor: Colors.white,
+            //     iconSize: 30,
+            //     onPressed: () => {},
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 10,
+            // ),
           ],
         ),
       ),

@@ -13,7 +13,7 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
-    var size = mediaQuery.size;
+    //var size = mediaQuery.size;
 
     return Scaffold(
       backgroundColor: styles.backgroundScreens,

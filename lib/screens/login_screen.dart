@@ -1,13 +1,9 @@
-import 'package:app_rh/screens/esqueceu_senha_screen.dart';
-import 'package:app_rh/screens/solicitar_acesso_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/build_button.dart';
 import 'package:app_rh/widgets/build_flat_button.dart';
 import 'package:app_rh/widgets/custom_icon_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
 import 'package:flutter/material.dart';
-
-import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -20,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
-    var size = mediaQuery.size;
+    //var size = mediaQuery.size;
 
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
@@ -108,17 +104,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   //funcao route screens
   void routeHomeScreen() async {
-    Navigator.of(context)
-        .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+    Navigator.pushNamed(context, 'home');
   }
 
   void routeEsqueceuSenhaScreen() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => EsqueceuSenhaScreen()));
+    Navigator.pushNamed(context, 'esqueceu_senha');
   }
 
   void routeSolicitarAcessoScree() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => SolicitarAcessoScreen()));
+    Navigator.pushNamed(context, 'solicitar_acesso');
   }
 }
