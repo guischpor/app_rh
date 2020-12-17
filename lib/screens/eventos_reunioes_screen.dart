@@ -1,5 +1,10 @@
-import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
+
+//Widgets
+import 'package:app_rh/styles/styles.dart';
+import 'package:intl/intl.dart';
+
+//Pages
 
 class EventosReunioesScreen extends StatefulWidget {
   @override
@@ -21,6 +26,33 @@ class _EventosReunioesScreenState extends State<EventosReunioesScreen> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         iconTheme: IconThemeData(color: styles.iconColorBlue),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.date_range,
+            ),
+            onPressed: () async {
+              final data = await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime.now(),
+                lastDate: DateTime(2050),
+                locale: Locale("pt", "BR"),
+              );
+
+              if (data != null) {
+                final datapt =
+                    DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
+                print(datapt);
+              }
+            },
+          ),
+        ],
+      ),
+      body: Container(
+        child: Center(
+          child: Text("Ola"),
+        ),
       ),
     );
   }
