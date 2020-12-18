@@ -8,6 +8,7 @@ import 'package:app_rh/screens/ferias_folgas_screen.dart';
 import 'package:app_rh/screens/first_screen.dart';
 import 'package:app_rh/screens/holerites_emitidos_screen.dart';
 import 'package:app_rh/screens/home_screen.dart';
+import 'package:app_rh/screens/info_evento_reuniao_screen.dart';
 import 'package:app_rh/screens/login_screen.dart';
 import 'package:app_rh/screens/marcador_ponto_screen.dart';
 import 'package:app_rh/screens/menu_screen.dart';
@@ -38,4 +39,5 @@ final routes = <String, WidgetBuilder>{
   'envio_documentos': (BuildContext context) => EnvioDocScreen(),
   'contatos_uteis': (BuildContext context) => ContatosUteisScreen(),
   'meu_perfil': (BuildContext context) => MeuPerfilScreen(),
+  'info_evento_reuniao': (BuildContext context) => InfoEventoReuniaoScreen(),
 };
