@@ -1,9 +1,13 @@
+import 'package:app_rh/stores/login_store.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/build_button.dart';
 import 'package:app_rh/widgets/build_flat_button.dart';
 import 'package:app_rh/widgets/custom_icon_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx/mobx.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -12,6 +16,21 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   Styles styles = Styles();
+  LoginStore loginStore;
+
+  ReactionDisposer disposer;
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+
+    loginStore = Provider.of<LoginStore>(context);
+
+    disposer = reaction((_) => loginStore.loggedIn, (loggedIn) {
+      if (loggedIn) Navigator.pushNamed(context, 'home');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,46 +59,79 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: constrains.maxHeight * 0.12,
                 ),
-                InputField(
-                  hint: "Matrícula",
-                  preffix: Icon(
-                    Icons.vpn_key,
-                    //color: styles.iconColorGrey,
-                  ),
-                  textInputType: TextInputType.text,
-                  onChanged: (value) => {},
-                  obscure: false,
-                  enable: true,
+                Observer(
+                  builder: (_) {
+                    return InputField(
+                      hint: "Matrícula",
+                      preffix: Icon(
+                        Icons.vpn_key,
+                        //color: styles.iconColorGrey,
+                      ),
+                      textInputType: TextInputType.text,
+                      onChanged: loginStore.setMatricula,
+                      obscure: false,
+                      enable: !loginStore.loading,
+                    );
+                  },
                 ),
                 SizedBox(
                   height: 15,
                 ),
-                InputField(
-                  hint: "Senha",
-                  preffix: Icon(
-                    Icons.lock,
-                    //color: styles.iconColorGrey,
-                  ),
-                  textInputType: TextInputType.text,
-                  onChanged: (value) => {},
-                  obscure: true,
-                  enable: true,
-                  suffix: CustomIconButton(
-                    radius: 32,
-                    iconData: Icons.visibility,
-                    onTap: () => {},
-                  ),
+                Observer(
+                  builder: (_) {
+                    return InputField(
+                      hint: "Senha",
+                      preffix: Icon(
+                        Icons.lock,
+                        //color: styles.iconColorGrey,
+                      ),
+                      onChanged: loginStore.setPassword,
+                      obscure: !loginStore.passwordVisible,
+                      enable: !loginStore.loading,
+                      suffix: CustomIconButton(
+                        radius: 32,
+                        iconData: loginStore.passwordVisible
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                        onTap: loginStore.togglePasswordVisibility,
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(
                   height: 15,
                 ),
-                Container(
-                  height: 50,
-                  child: BuildButton(
-                    colorButton: styles.colorButtons,
-                    onPressed: routeHomeScreen,
-                    title: "ENTRAR",
-                  ),
+                Observer(
+                  builder: (_) {
+                    return Container(
+                      height: 50,
+                      child: RaisedButton(
+                        color: styles.colorButtons,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            10,
+                          ),
+                        ),
+                        onPressed: loginStore.loginPressed,
+                        child: loginStore.loading
+                            ? SizedBox(
+                                height: 25,
+                                width: 25,
+                                child: CircularProgressIndicator(
+                                  valueColor:
+                                      AlwaysStoppedAnimation(Colors.white),
+                                ),
+                              )
+                            : Text(
+                                "ENTRAR",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(
                   height: constrains.maxHeight * 0.05,
@@ -113,5 +165,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void routeSolicitarAcessoScree() async {
     Navigator.pushNamed(context, 'solicitar_acesso');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 }
