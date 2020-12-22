@@ -1,6 +1,6 @@
 import 'package:app_rh/stores/login_store.dart';
 import 'package:app_rh/styles/styles.dart';
-import 'package:app_rh/widgets/build_button.dart';
+//import 'package:app_rh/widgets/build_button.dart';
 import 'package:app_rh/widgets/build_flat_button.dart';
 import 'package:app_rh/widgets/custom_icon_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
@@ -62,13 +62,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 Observer(
                   builder: (_) {
                     return InputField(
-                      hint: "Matrícula",
+                      hint: "Email",
                       preffix: Icon(
-                        Icons.vpn_key,
+                        Icons.email,
                         //color: styles.iconColorGrey,
                       ),
-                      textInputType: TextInputType.text,
-                      onChanged: loginStore.setMatricula,
+                      textInputType: TextInputType.emailAddress,
+                      onChanged: loginStore.setEmail,
                       obscure: false,
                       enable: !loginStore.loading,
                     );
@@ -141,11 +141,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   textColor: styles.textColorGrey,
                   onPressed: routeEsqueceuSenhaScreen,
                 ),
-                BuildFlatButton(
-                  title: "SOLICITAR ACESSO!",
-                  textColor: styles.textColorGrey,
-                  onPressed: routeSolicitarAcessoScree,
-                ),
+                // BuildFlatButton(
+                //   title: "SOLICITAR ACESSO!",
+                //   textColor: styles.textColorGrey,
+                //   onPressed: routeSolicitarAcessoScree,
+                // ),
               ],
             );
           },

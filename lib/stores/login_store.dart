@@ -9,13 +9,13 @@ abstract class _LoginStore with Store {
     autorun((_) {});
   }
 
-  //campo matricula
+  //campo email
   @observable
-  String matricula = "";
+  String email = "";
 
   //setar email
   @action
-  void setMatricula(String value) => matricula = value;
+  void setEmail(String value) => email = value;
 
   //campo password
   @observable
@@ -41,14 +41,16 @@ abstract class _LoginStore with Store {
 
   //validação dos campos
   @computed
-  bool get isMatriculaValid => matricula.length >= 6;
+  bool get isEmailValid => RegExp(
+          r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+      .hasMatch(email);
 
   @computed
   bool get isPasswordValid => password.length >= 6;
 
   @computed
   Function get loginPressed =>
-      (isMatriculaValid && isPasswordValid && !loading) ? login : null;
+      (isEmailValid && isPasswordValid && !loading) ? login : null;
 
   //funcao login
   @action
@@ -65,7 +67,7 @@ abstract class _LoginStore with Store {
     //LOGANDO
     loggedIn = true;
 
-    matricula = "";
+    email = "";
     password = "";
   }
 

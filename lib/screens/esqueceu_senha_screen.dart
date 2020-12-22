@@ -1,8 +1,11 @@
+import 'package:app_rh/stores/esqueceu_senha_store.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/build_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
 import 'package:app_rh/widgets/title_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx/mobx.dart';
 
 class EsqueceuSenhaScreen extends StatefulWidget {
   @override
@@ -11,6 +14,21 @@ class EsqueceuSenhaScreen extends StatefulWidget {
 
 class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
   Styles styles = Styles();
+  final EsqueceuSenhaStore esqueceuSenhaStore = EsqueceuSenhaStore();
+
+  ReactionDisposer disposer;
+
+  @override
+  void didChangeDependencies() {
+    // ignore: todo
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+
+    disposer = reaction((_) => esqueceuSenhaStore.sending, (sending) {
+      if (sending) _showAlerta(context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
@@ -48,27 +66,55 @@ class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                InputField(
-                  hint: "Email",
-                  preffix: Icon(
-                    Icons.email,
-                    //color: styles.iconColorGrey,
-                  ),
-                  textInputType: TextInputType.text,
-                  onChanged: (value) => {},
-                  obscure: false,
-                  enable: true,
+                Observer(
+                  builder: (_) {
+                    return InputField(
+                      hint: "Email",
+                      preffix: Icon(
+                        Icons.email,
+                        //color: styles.iconColorGrey,
+                      ),
+                      textInputType: TextInputType.emailAddress,
+                      onChanged: esqueceuSenhaStore.setEmail,
+                      obscure: false,
+                      enable: !esqueceuSenhaStore.loading,
+                    );
+                  },
                 ),
                 SizedBox(
                   height: 15,
                 ),
-                Container(
-                  height: 50,
-                  child: BuildButton(
-                    colorButton: styles.colorButtons,
-                    onPressed: () => {_showAlerta(context)},
-                    title: "ENVIAR SENHA",
-                  ),
+                Observer(
+                  builder: (_) {
+                    return Container(
+                      height: 50,
+                      child: RaisedButton(
+                        color: styles.colorButtons,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            10,
+                          ),
+                        ),
+                        onPressed: esqueceuSenhaStore.sendPressed,
+                        child: esqueceuSenhaStore.loading
+                            ? SizedBox(
+                                height: 25,
+                                width: 25,
+                                child: CircularProgressIndicator(
+                                  valueColor:
+                                      AlwaysStoppedAnimation(Colors.white),
+                                ),
+                              )
+                            : Text(
+                                "ENVIAR SENHA",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                      ),
+                    );
+                  },
                 ),
               ],
             );
@@ -140,5 +186,12 @@ class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
 
   void _routeLoginPage() async {
     Navigator.pushNamed(context, 'login');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    dispose();
+    super.dispose();
   }
 }
