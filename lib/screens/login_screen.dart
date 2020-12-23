@@ -4,6 +4,7 @@ import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/build_flat_button.dart';
 import 'package:app_rh/widgets/custom_icon_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
@@ -21,7 +22,14 @@ class _LoginScreenState extends State<LoginScreen> {
   ReactionDisposer disposer;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   void didChangeDependencies() {
+    // ignore: todo
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
 

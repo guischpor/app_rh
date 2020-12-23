@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mobx/mobx.dart';
 part 'login_store.g.dart';
 
@@ -59,20 +60,34 @@ abstract class _LoginStore with Store {
     loading = true;
 
     //processar o loading
-    await Future.delayed(Duration(seconds: 3));
+    try {
+      Future<UserCredential> user = FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      if (user != null) {
+        //desabilita o botao entrar
+        loading = false;
+
+        //LOGANDO
+        loggedIn = true;
+
+        print("Logado com sucesso");
+        print(email);
+        print(password);
+      }
+    } catch (e) {
+      print(e);
+      print("Usuario ou Senha inválidos");
+      // TODO: AlertDialog with error
+    }
 
     //desabilita o botao entrar
-    loading = false;
+    //loading = false;
 
     //LOGANDO
-    loggedIn = true;
+    //loggedIn = true;
 
     email = "";
     password = "";
-  }
-
-  //quando der logout
-  void logout() {
-    loggedIn = false;
   }
 }

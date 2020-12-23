@@ -1,19 +1,19 @@
-import 'package:app_rh/screens/login_screen.dart';
 import 'package:app_rh/stores/login_store.dart';
-import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 //Routes
 import 'package:app_rh/routes/routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final styles = Styles();
   @override
   Widget build(BuildContext context) {
     return Provider<LoginStore>(

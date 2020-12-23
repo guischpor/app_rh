@@ -1,7 +1,12 @@
+import 'package:app_rh/stores/login_store.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/menu_drawer/build_info.dart';
 import 'package:app_rh/widgets/menu_drawer/tiles_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx/mobx.dart';
+import 'package:provider/provider.dart';
+import 'package:app_rh/stores/drawer_store.dart';
 
 class BuildDrawer extends StatefulWidget {
   const BuildDrawer({Key key}) : super(key: key);
@@ -12,6 +17,22 @@ class BuildDrawer extends StatefulWidget {
 
 class _BuildDrawerState extends State<BuildDrawer> {
   Styles styles = Styles();
+
+  final DrawerStore drawerStore = DrawerStore();
+
+  ReactionDisposer disposer;
+
+  @override
+  void didChangeDependencies() {
+    // ignore: todo
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+
+    // disposer = reaction((_) => drawerStore.loggedIn, (loggedIn) {
+    //   if (loggedIn) Navigator.pushNamed(context, 'login');
+    // });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -74,11 +95,15 @@ class _BuildDrawerState extends State<BuildDrawer> {
             title: "Contatos Úteis",
             onTap: _routeContatosUteis,
           ),
-          TilesDrawer(
-            icon: Icons.exit_to_app,
-            title: "Sair",
-            onTap: _routeExit,
-          ),
+          Observer(
+            builder: (_) {
+              return TilesDrawer(
+                icon: Icons.exit_to_app,
+                title: "Sair",
+                onTap: _routeExit,
+              );
+            },
+          )
         ],
       ),
     );
@@ -125,6 +150,13 @@ class _BuildDrawerState extends State<BuildDrawer> {
   }
 
   void _routeExit() async {
+    drawerStore.logout();
     Navigator.pushNamed(context, 'login');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 }
