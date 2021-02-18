@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mobx/mobx.dart';
 part 'login_store.g.dart';
 
@@ -59,10 +60,12 @@ abstract class _LoginStore with Store {
     //habilita o botão entrar
     loading = true;
 
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+
     //processar o loading
     try {
-      Future<UserCredential> user = FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
+      Future<UserCredential> user =
+          _auth.signInWithEmailAndPassword(email: email, password: password);
 
       if (user != null) {
         //desabilita o botao entrar
@@ -76,16 +79,11 @@ abstract class _LoginStore with Store {
         print(password);
       }
     } catch (e) {
-      print(e);
       print("Usuario ou Senha inválidos");
+      print(e);
+
       // TODO: AlertDialog with error
     }
-
-    //desabilita o botao entrar
-    //loading = false;
-
-    //LOGANDO
-    //loggedIn = true;
 
     email = "";
     password = "";
