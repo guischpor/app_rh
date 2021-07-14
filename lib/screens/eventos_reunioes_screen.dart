@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 //Widgets
 import 'package:app_rh/styles/styles.dart';
-import 'package:intl/intl.dart';
+//import 'package:intl/intl.dart';
 
 //Pages
 
@@ -41,11 +41,11 @@ class _EventosReunioesScreenState extends State<EventosReunioesScreen> {
                 locale: Locale("pt", "BR"),
               );
 
-              if (data != null) {
-                final datapt =
-                    DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
-                print(datapt);
-              }
+              // if (data != null) {
+              //   final datapt =
+              //       DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
+              // print(datapt);
+              //}
             },
           ),
         ],

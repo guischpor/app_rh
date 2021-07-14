@@ -1,6 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 //Routes
 import 'package:app_rh/routes/routes.dart';
@@ -20,10 +19,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: routes,
       initialRoute: 'welcome',
-      localizationsDelegates: [
-        GlobalWidgetsLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-      ],
       supportedLocales: [
         Locale("pt", "BR"),
       ],
