@@ -8,22 +8,23 @@ class InputField extends StatelessWidget {
   final Widget preffix;
   final Widget suffix;
   final Color iconColor;
-  final bool obscure;
+  final bool obscureText;
   final TextInputType textInputType;
   final Function(String) onChanged;
   final bool enable;
 
-  InputField(
-      {this.controller,
-      this.hint,
-      this.icon,
-      this.preffix,
-      this.suffix,
-      this.iconColor,
-      this.obscure,
-      this.textInputType,
-      this.onChanged,
-      this.enable});
+  InputField({
+    this.controller,
+    this.hint,
+    this.icon,
+    this.preffix,
+    this.suffix,
+    this.iconColor,
+    this.obscureText,
+    this.textInputType,
+    this.onChanged,
+    this.enable,
+  });
 
   final styles = Styles();
   @override
@@ -34,7 +35,7 @@ class InputField extends StatelessWidget {
         color: Colors.white,
       ),
       child: TextField(
-        obscureText: obscure,
+        obscureText: obscureText,
         controller: controller,
         keyboardType: textInputType,
         onChanged: onChanged,

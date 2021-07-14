@@ -56,7 +56,7 @@ class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
                   ),
                   textInputType: TextInputType.text,
                   onChanged: (value) => {},
-                  obscure: false,
+                  obscureText: false,
                   enable: true,
                 ),
                 SizedBox(

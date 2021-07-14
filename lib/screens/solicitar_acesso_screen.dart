@@ -46,7 +46,7 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
                   ),
                   textInputType: TextInputType.text,
                   onChanged: (value) => {},
-                  obscure: false,
+                  obscureText: false,
                   enable: true,
                 ),
                 SizedBox(
@@ -60,7 +60,7 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
                   ),
                   textInputType: TextInputType.text,
                   onChanged: (value) => {},
-                  obscure: false,
+                  obscureText: false,
                   enable: true,
                 ),
                 SizedBox(
@@ -74,7 +74,7 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
                   ),
                   textInputType: TextInputType.text,
                   onChanged: (value) => {},
-                  obscure: false,
+                  obscureText: false,
                   enable: true,
                 ),
                 SizedBox(

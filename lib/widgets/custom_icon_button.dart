@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomIconButton extends StatelessWidget {
   final double radius;
   final IconData iconData;
-  final VoidCallback onTap;
+  final void Function() onTap;
 
   CustomIconButton({this.iconData, this.onTap, this.radius});
   @override

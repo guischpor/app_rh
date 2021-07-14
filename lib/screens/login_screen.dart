@@ -12,6 +12,21 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   Styles styles = Styles();
+  bool _isVisible = false;
+  String email;
+  String password;
+
+  @override
+  void initState() {
+    super.initState();
+    _isVisible = false;
+  }
+
+  void _visiblePassword() {
+    setState(() {
+      _isVisible ? _isVisible = false : _isVisible = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +56,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: constrains.maxHeight * 0.12,
                 ),
                 InputField(
-                  hint: "Matrícula",
+                  hint: "Email",
                   preffix: Icon(
-                    Icons.vpn_key,
+                    Icons.email,
                     //color: styles.iconColorGrey,
                   ),
-                  textInputType: TextInputType.text,
-                  onChanged: (value) => {},
-                  obscure: false,
+                  textInputType: TextInputType.emailAddress,
+                  onChanged: (text) => {
+                    email = text,
+                  },
+                  obscureText: true,
                   enable: true,
                 ),
                 SizedBox(
@@ -61,13 +78,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     //color: styles.iconColorGrey,
                   ),
                   textInputType: TextInputType.text,
-                  onChanged: (value) => {},
-                  obscure: true,
+                  onChanged: (text) => {
+                    password = text,
+                  },
+                  obscureText: _isVisible,
                   enable: true,
                   suffix: CustomIconButton(
                     radius: 32,
-                    iconData: Icons.visibility,
-                    onTap: () => {},
+                    iconData:
+                        _isVisible ? Icons.visibility : Icons.visibility_off,
+                    onTap: _visiblePassword,
                   ),
                 ),
                 SizedBox(
