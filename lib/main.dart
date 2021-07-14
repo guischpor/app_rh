@@ -19,9 +19,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: routes,
       initialRoute: 'welcome',
-      supportedLocales: [
-        Locale("pt", "BR"),
-      ],
     );
   }
 }
