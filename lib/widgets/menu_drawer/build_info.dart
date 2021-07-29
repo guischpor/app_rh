@@ -58,7 +58,7 @@ class _BuildInfoState extends State<BuildInfo> {
                   InkWell(
                     onTap: _routeMeuPerfil,
                     child: Text(
-                      "EDITAR PERFIL",
+                      "MEU PERFIL",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 10,
