@@ -43,18 +43,14 @@ class _LoginScreenState extends State<LoginScreen> {
             return ListView(
               padding: EdgeInsets.all(16),
               children: [
-                SizedBox(
-                  height: constrains.maxHeight * 0.12,
-                ),
+                SizedBox(height: constrains.maxHeight * 0.12),
                 Container(
                   height: constrains.maxHeight * .2,
                   child: Image(
                     image: AssetImage('assets/images/logo_rh_azul.png'),
                   ),
                 ),
-                SizedBox(
-                  height: constrains.maxHeight * 0.12,
-                ),
+                SizedBox(height: constrains.maxHeight * 0.12),
                 Form(
                   child: Column(
                     children: [
@@ -95,9 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     title: "ENTRAR",
                   ),
                 ),
-                SizedBox(
-                  height: constrains.maxHeight * 0.05,
-                ),
+                SizedBox(height: constrains.maxHeight * 0.05),
                 BuildFlatButton(
                   title: "ESQUECEU A SUA SENHA? CLIQUE AQUI!",
                   textColor: styles.textColorGrey,
@@ -118,14 +112,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   //funcao route screens
   void routeHomeScreen() async {
-    Navigator.pushNamed(context, 'home');
+    await Navigator.pushNamed(context, 'home');
   }
 
   void routeEsqueceuSenhaScreen() async {
-    Navigator.pushNamed(context, 'esqueceu_senha');
+    await Navigator.pushNamed(context, 'esqueceu_senha');
   }
 
   void routeSolicitarAcessoScree() async {
-    Navigator.pushNamed(context, 'solicitar_acesso');
+    await Navigator.pushNamed(context, 'solicitar_acesso');
   }
 }
