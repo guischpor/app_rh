@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "icon": "code",
+        "gerente": "Aldair Santos",
+        "setor": "Fábrica de Software",
+        "email": "fabsoft@email.com",
+        "telefone": "(41) 3333-2222"
+    },
+    {
+        "id": 2,
+        "iconData": "person",
+        "gerente": "Fabiola Padilha",
+        "setor": "Recursos Humanos",
+        "email": "rh@email.com",
+        "telefone": "(41) 3333-2233"
+    },
+    {
+        "id": 3,
+        "icon": "insert_drive_file",
+        "gerente": "Simone Dantas",
+        "setor": "Administração",
+        "email": "adm@email.com",
+        "telefone": "(41) 3333-2244"
+    },
+    {
+        "id": 4,
+        "icon": "person_outline",
+        "gerente": "Miguel Souza",
+        "setor": "Diretoria",
+        "email": "diretoria@email.com",
+        "telefone": "(41) 3333-2255"
+    },
+    {
+        "id": 5,
+        "icon": "build",
+        "gerente": "Leo Paiva",
+        "setor": "Manutenção de TI",
+        "email": "manutti@email.com",
+        "telefone": "(41) 3333-2266"
+    }
+]
