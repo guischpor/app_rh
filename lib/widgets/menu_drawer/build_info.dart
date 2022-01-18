@@ -1,4 +1,3 @@
-import 'package:app_rh/screens/meu_perfil_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 

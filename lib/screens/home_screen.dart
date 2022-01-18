@@ -77,19 +77,14 @@ class _HomeScreenState extends State<HomeScreen> {
     switch (currentIndex) {
       case 0:
         return MenuScreen();
-        break;
       case 1:
         return MeuPontoScreen();
-        break;
       case 2:
         return MarcadorPontoScreen();
-        break;
       case 3:
         return EventosReunioesScreen();
-        break;
       case 4:
         return MeuPerfilScreen();
-        break;
       default:
         return MenuScreen();
     }

@@ -16,17 +16,18 @@ class BuildButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: colorButton,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: colorButton,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
       onPressed: onPressed,
       child: Text(
         title!,
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
       ),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-        10,
-      )),
     );
   }
 }

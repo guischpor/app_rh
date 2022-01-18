@@ -2,9 +2,7 @@ import 'dart:convert';
 import 'package:app_rh/styles/styles.dart';
 import 'package:app_rh/widgets/build_card.contatos.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 //import 'package:http/http.dart' as http;
-import 'package:app_rh/models/ContatoModel.dart';
 
 class ContatosUteisScreen extends StatefulWidget {
   @override

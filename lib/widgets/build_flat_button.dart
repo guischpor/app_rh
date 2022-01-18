@@ -12,10 +12,16 @@ class BuildFlatButton extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: onPressed,
-      textColor: textColor,
-      child: Text(title, style: TextStyle(letterSpacing: 0.2, fontSize: 11)),
+      child: Text(
+        title,
+        style: TextStyle(
+          letterSpacing: 0.2,
+          fontSize: 11,
+          color: textColor,
+        ),
+      ),
     );
   }
 }
