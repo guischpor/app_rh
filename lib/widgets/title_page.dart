@@ -8,11 +8,11 @@ class TitlePage extends StatelessWidget {
   final TextAlign textAlign;
 
   TitlePage({
-    this.title,
-    this.color,
-    this.fontSize,
-    this.fontWeight,
-    this.textAlign,
+    required this.title,
+    required this.color,
+    required this.fontSize,
+    required this.fontWeight,
+    required this.textAlign,
   });
 
   @override

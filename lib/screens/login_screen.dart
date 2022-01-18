@@ -13,8 +13,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   Styles styles = Styles();
   bool _isVisible = false;
-  String email;
-  String password;
+  String? email;
+  String? password;
 
   @override
   void initState() {

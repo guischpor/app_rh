@@ -2,26 +2,26 @@ import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
-  final TextEditingController controller;
-  final String hint;
-  final IconData icon;
-  final Widget preffix;
-  final Widget suffix;
-  final Color iconColor;
+  final TextEditingController? controller;
+  final String? hint;
+  final IconData? icon;
+  final Widget? preffix;
+  final Widget? suffix;
+  final Color? iconColor;
   final bool obscureText;
   final TextInputType textInputType;
-  final Function(String) onChanged;
-  final bool enable;
+  final Function(String)? onChanged;
+  final bool? enable;
 
   InputField({
     this.controller,
-    this.hint,
+    required this.hint,
     this.icon,
     this.preffix,
     this.suffix,
     this.iconColor,
-    this.obscureText,
-    this.textInputType,
+    this.obscureText = false,
+    required this.textInputType,
     this.onChanged,
     this.enable,
   });

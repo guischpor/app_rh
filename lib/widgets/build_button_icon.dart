@@ -9,15 +9,15 @@ class BuildButtonIcon extends StatelessWidget {
   final Color iconColor;
   final Color colorButton;
   final String title;
-  final Function onPressed;
+  final void Function()? onPressed;
 
   BuildButtonIcon({
-    this.colorButton,
-    this.iconSize,
-    this.iconRight,
-    this.iconColor,
-    this.onPressed,
-    this.title,
+    required this.colorButton,
+    required this.iconSize,
+    required this.iconRight,
+    required this.iconColor,
+    required this.onPressed,
+    required this.title,
   });
 
   final styles = Styles();

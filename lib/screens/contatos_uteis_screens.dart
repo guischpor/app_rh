@@ -44,6 +44,8 @@ class _ContatosUteisScreenState extends State<ContatosUteisScreen> {
                     setor: showData[index]["setor"],
                     email: showData[index]["email"],
                     phone: showData[index]["telefone"],
+                    data: null,
+                    index: null,
                   );
                 },
               );

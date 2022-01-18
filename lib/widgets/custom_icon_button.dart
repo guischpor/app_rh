@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 class CustomIconButton extends StatelessWidget {
   final double radius;
   final IconData iconData;
-  final void Function() onTap;
+  final void Function()? onTap;
 
-  CustomIconButton({this.iconData, this.onTap, this.radius});
+  CustomIconButton({
+    required this.iconData,
+    required this.onTap,
+    required this.radius,
+  });
   @override
   Widget build(BuildContext context) {
     return ClipRRect(

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:app_rh/widgets/build_button.dart';
 
 class FirstScreen extends StatefulWidget {
-  FirstScreen({Key key}) : super(key: key);
 
   @override
   _FirstScreenState createState() => _FirstScreenState();

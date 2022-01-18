@@ -2,19 +2,19 @@ import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {
-  final String title;
-  final double sizeTitle;
+  final String? title;
+  final double? sizeTitle;
   final Color colorTitle;
   final IconData icon;
   final Color iconColor;
-  final Function onTap;
+  final void Function()? onTap;
 
   MenuItem({
-    this.title,
+    required this.title,
     this.sizeTitle,
-    this.colorTitle,
-    this.icon,
-    this.iconColor,
+    required this.colorTitle,
+    required this.icon,
+    required this.iconColor,
     this.onTap,
   });
 
@@ -50,7 +50,7 @@ class MenuItem extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    title,
+                    title!,
                     style: TextStyle(
                         color: colorTitle,
                         fontWeight: FontWeight.bold,

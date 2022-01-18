@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 
 class BuildButton extends StatelessWidget {
   final Color colorButton;
-  final String title;
-  final Function onPressed;
+  final String? title;
+  final void Function()? onPressed;
 
-  BuildButton({this.colorButton, this.onPressed, this.title});
+  BuildButton({
+    required this.colorButton,
+    this.onPressed,
+    this.title,
+  });
 
   final styles = Styles();
 
@@ -16,7 +20,7 @@ class BuildButton extends StatelessWidget {
       color: colorButton,
       onPressed: onPressed,
       child: Text(
-        title,
+        title!,
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
       ),
       shape: RoundedRectangleBorder(

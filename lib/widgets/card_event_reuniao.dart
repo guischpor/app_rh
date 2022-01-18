@@ -11,18 +11,18 @@ class CardEventoReuniao extends StatelessWidget {
   final String nameEvent;
   final String description;
 
-  final Function onTap;
+  final void Function()? onTap;
 
   final styles = Styles();
 
   CardEventoReuniao({
-    this.dia,
-    this.initialHour,
-    this.lastHour,
-    this.nameEvent,
-    this.description,
-    this.diaSemana,
-    this.onTap,
+    required this.dia,
+    required this.initialHour,
+    required this.lastHour,
+    required this.nameEvent,
+    required this.description,
+    required this.diaSemana,
+    required this.onTap,
   });
   @override
   Widget build(BuildContext context) {

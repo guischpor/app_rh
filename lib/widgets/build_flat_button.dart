@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 class BuildFlatButton extends StatelessWidget {
   final String title;
-  final Function onPressed;
+  final void Function()? onPressed;
   final Color textColor;
 
-  BuildFlatButton({this.title, this.onPressed, this.textColor});
+  BuildFlatButton({
+    required this.title,
+    this.onPressed,
+    required this.textColor,
+  });
   @override
   Widget build(BuildContext context) {
     return FlatButton(

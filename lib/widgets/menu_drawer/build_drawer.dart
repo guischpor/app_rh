@@ -4,8 +4,6 @@ import 'package:app_rh/widgets/menu_drawer/tiles_drawer.dart';
 import 'package:flutter/material.dart';
 
 class BuildDrawer extends StatefulWidget {
-  const BuildDrawer({Key key}) : super(key: key);
-
   @override
   _BuildDrawerState createState() => _BuildDrawerState();
 }

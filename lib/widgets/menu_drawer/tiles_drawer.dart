@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class TilesDrawer extends StatelessWidget {
   final IconData icon;
   final String title;
-  final Function onTap;
+  final void Function() onTap;
 
   TilesDrawer({
-    this.icon,
-    this.title,
-    this.onTap,
+    required this.icon,
+    required this.title,
+    required this.onTap,
   });
 
   final styles = Styles();

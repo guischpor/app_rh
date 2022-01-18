@@ -20,21 +20,22 @@ class BuildCardProfile extends StatelessWidget {
   final String cargo;
   final String matricula;
 
-  BuildCardProfile(
-      {this.image,
-      this.nome,
-      this.profissao,
-      this.email,
-      this.phone,
-      this.cel,
-      this.rua,
-      this.bairro,
-      this.cidade,
-      this.estado,
-      this.empresa,
-      this.setor,
-      this.cargo,
-      this.matricula});
+  BuildCardProfile({
+    required this.image,
+    required this.nome,
+    required this.profissao,
+    required this.email,
+    required this.phone,
+    required this.cel,
+    required this.rua,
+    required this.bairro,
+    required this.cidade,
+    required this.estado,
+    required this.empresa,
+    required this.setor,
+    required this.cargo,
+    required this.matricula,
+  });
   final styles = Styles();
   @override
   Widget build(BuildContext context) {

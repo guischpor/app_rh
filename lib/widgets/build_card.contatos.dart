@@ -3,27 +3,27 @@ import 'package:flutter/material.dart';
 
 class BuildCardContatos extends StatelessWidget {
   final IconData iconData;
-  final int index;
+  final int? index;
   final dynamic data;
   final Color iconColor;
   final double iconSize;
   final double textSize;
-  final String gerente;
-  final String setor;
-  final String email;
-  final String phone;
+  final String? gerente;
+  final String? setor;
+  final String? email;
+  final String? phone;
 
   BuildCardContatos({
-    this.iconData,
-    this.iconColor,
-    this.iconSize,
-    this.textSize,
-    this.gerente,
-    this.setor,
-    this.email,
-    this.phone,
-    this.index,
-    this.data,
+    required this.iconData,
+    required this.iconColor,
+    required this.iconSize,
+    required this.textSize,
+    required this.gerente,
+    required this.setor,
+    required this.email,
+    required this.phone,
+    required this.index,
+    required this.data,
   });
 
   final styles = Styles();

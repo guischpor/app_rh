@@ -9,11 +9,11 @@ class CardInfoEventoReuniao extends StatelessWidget {
   final String participante;
 
   CardInfoEventoReuniao({
-    this.titleEvent,
-    this.hour,
-    this.empresa,
-    this.time,
-    this.participante,
+    required this.titleEvent,
+    required this.hour,
+    required this.empresa,
+    required this.time,
+    required this.participante,
   });
 
   final styles = Styles();
