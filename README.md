@@ -6,7 +6,7 @@ Esse projeto está em desenvolvimento, e o modelo do aplicativo foi baseado no r
 
 O aplicativo está sendo construído em Flutter, o backend ainda não foi definido, está em fase de pesquisa!
 
-- [Download do Projeto de Interface UI- App RH Resources](https://drive.google.com/drive/folders/192BZmb8AWz2xXgM2fMYgVYoM5kA-vjHp?usp=sharing)
+- [Download do Projeto de Interface UI- App RH Resources](https://drive.google.com/file/d/1yNrlSb8_qAuiybsZ6kxGa89r8uQNSYFN/view?usp=sharing)
 
 - [Download da apk release - App RH Resources](https://drive.google.com/file/d/1lT9XgXs3_L7P6eJ63J7o_O3rlmIATKYa/view?usp=sharing)
 
