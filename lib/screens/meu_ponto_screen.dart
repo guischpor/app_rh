@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class MeuPontoScreen extends StatefulWidget {
@@ -12,15 +13,7 @@ class _MeuPontoScreenState extends State<MeuPontoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          "Meu Ponto",
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.iconColorBlue),
-      ),
+      appBar: appBar(titleBar: 'Meu Ponto'),
     );
   }
 }

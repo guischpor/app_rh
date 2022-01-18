@@ -1,3 +1,4 @@
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:app_rh/widgets/card_event_reuniao.dart';
 import 'package:flutter/material.dart';
 
@@ -19,34 +20,14 @@ class _EventosReunioesScreenState extends State<EventosReunioesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          "Eventos e Reuniões",
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.iconColorBlue),
+      appBar: appBar(
+        titleBar: 'Eventos e Reuniões',
         actions: [
           IconButton(
             icon: Icon(
               Icons.date_range,
             ),
-            onPressed: () async {
-              final data = await showDatePicker(
-                context: context,
-                initialDate: DateTime.now(),
-                firstDate: DateTime.now(),
-                lastDate: DateTime(2050),
-                locale: Locale("pt", "BR"),
-              );
-
-              // if (data != null) {
-              //   final datapt =
-              //       DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
-              // print(datapt);
-              //}
-            },
+            onPressed: () async {},
           ),
         ],
       ),

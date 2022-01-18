@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:app_rh/widgets/build_button_icon.dart';
 import 'package:app_rh/widgets/build_card_profile.dart';
 import 'package:flutter/material.dart';
@@ -14,15 +15,7 @@ class _MeuPerfilScreenState extends State<MeuPerfilScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          "Meu Perfil",
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.iconColorBlue),
-      ),
+      appBar: appBar(titleBar: 'Meu Perfil'),
       body: Container(
         padding: EdgeInsets.all(16),
         child: ListView(
@@ -46,20 +39,20 @@ class _MeuPerfilScreenState extends State<MeuPerfilScreen> {
             SizedBox(
               height: 10,
             ),
-            // Container(
-            //   height: 50,
-            //   child: BuildButtonIcon(
-            //     colorButton: styles.colorButtons,
-            //     title: "ALTERAR DADOS",
-            //     iconRight: Icons.keyboard_arrow_right,
-            //     iconColor: Colors.white,
-            //     iconSize: 30,
-            //     onPressed: () => {},
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 10,
-            // ),
+            Container(
+              height: 50,
+              child: BuildButtonIcon(
+                colorButton: styles.colorButtons,
+                title: "EDITAR PERFIL",
+                iconRight: Icons.keyboard_arrow_right,
+                iconColor: Colors.white,
+                iconSize: 30,
+                onPressed: () => {},
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),

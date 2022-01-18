@@ -1,5 +1,3 @@
-import 'package:app_rh/screens/login_screen.dart';
-import 'package:app_rh/screens/solicitar_acesso_screen.dart';
 import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:app_rh/widgets/build_button.dart';

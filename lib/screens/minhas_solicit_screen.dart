@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class MinhasSolicitScreen extends StatefulWidget {
@@ -12,15 +13,7 @@ class _MinhasSolicitScreenState extends State<MinhasSolicitScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          "Minhas Solicitações",
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.iconColorBlue),
-      ),
+      appBar: appBar(titleBar: 'Minhas Solicitações'),
     );
   }
 }

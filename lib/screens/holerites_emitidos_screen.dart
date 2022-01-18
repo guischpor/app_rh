@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HoleritesEmitidosScreen extends StatefulWidget {
@@ -13,15 +14,7 @@ class _HoleritesEmitidosScreenState extends State<HoleritesEmitidosScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          "Holerites Emitidos",
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.iconColorBlue),
-      ),
+      appBar: appBar(titleBar: 'Holetires Emitidos'),
     );
   }
 }

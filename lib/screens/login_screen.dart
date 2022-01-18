@@ -43,55 +43,45 @@ class _LoginScreenState extends State<LoginScreen> {
             return ListView(
               padding: EdgeInsets.all(16),
               children: [
-                SizedBox(
-                  height: constrains.maxHeight * 0.12,
-                ),
+                SizedBox(height: constrains.maxHeight * 0.12),
                 Container(
                   height: constrains.maxHeight * .2,
                   child: Image(
                     image: AssetImage('assets/images/logo_rh_azul.png'),
                   ),
                 ),
-                SizedBox(
-                  height: constrains.maxHeight * 0.12,
-                ),
-                InputField(
-                  hint: "Email",
-                  preffix: Icon(
-                    Icons.email,
-                    //color: styles.iconColorGrey,
+                SizedBox(height: constrains.maxHeight * 0.12),
+                Form(
+                  child: Column(
+                    children: [
+                      InputField(
+                        hint: "Email",
+                        preffix: Icon(
+                          Icons.email,
+                          //color: styles.iconColorGrey,
+                        ),
+                        textInputType: TextInputType.emailAddress,
+                      ),
+                      SizedBox(height: 15),
+                      InputField(
+                        hint: "Senha",
+                        preffix: Icon(
+                          Icons.lock,
+                          //color: styles.iconColorGrey,
+                        ),
+                        textInputType: TextInputType.text,
+                        obscureText: !_isVisible,
+                        suffix: CustomIconButton(
+                          radius: 32,
+                          iconData: _isVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          onTap: _visiblePassword,
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                    ],
                   ),
-                  textInputType: TextInputType.emailAddress,
-                  onChanged: (text) => {
-                    email = text,
-                  },
-                  obscureText: true,
-                  enable: true,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                InputField(
-                  hint: "Senha",
-                  preffix: Icon(
-                    Icons.lock,
-                    //color: styles.iconColorGrey,
-                  ),
-                  textInputType: TextInputType.text,
-                  onChanged: (text) => {
-                    password = text,
-                  },
-                  obscureText: _isVisible,
-                  enable: true,
-                  suffix: CustomIconButton(
-                    radius: 32,
-                    iconData:
-                        _isVisible ? Icons.visibility : Icons.visibility_off,
-                    onTap: _visiblePassword,
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
                 ),
                 Container(
                   height: 50,
@@ -101,9 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     title: "ENTRAR",
                   ),
                 ),
-                SizedBox(
-                  height: constrains.maxHeight * 0.05,
-                ),
+                SizedBox(height: constrains.maxHeight * 0.05),
                 BuildFlatButton(
                   title: "ESQUECEU A SUA SENHA? CLIQUE AQUI!",
                   textColor: styles.textColorGrey,
@@ -124,14 +112,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   //funcao route screens
   void routeHomeScreen() async {
-    Navigator.pushNamed(context, 'home');
+    await Navigator.pushNamed(context, 'home');
   }
 
   void routeEsqueceuSenhaScreen() async {
-    Navigator.pushNamed(context, 'esqueceu_senha');
+    await Navigator.pushNamed(context, 'esqueceu_senha');
   }
 
   void routeSolicitarAcessoScree() async {
-    Navigator.pushNamed(context, 'solicitar_acesso');
+    await Navigator.pushNamed(context, 'solicitar_acesso');
   }
 }

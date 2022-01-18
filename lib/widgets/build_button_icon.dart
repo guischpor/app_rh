@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:app_rh/styles/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +5,7 @@ class BuildButtonIcon extends StatelessWidget {
   final double iconSize;
   final IconData iconRight;
   final Color iconColor;
-  final Color colorButton;
+  final Color? colorButton;
   final String title;
   final void Function()? onPressed;
 
@@ -24,8 +22,13 @@ class BuildButtonIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: colorButton,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: colorButton,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
       onPressed: onPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,10 +48,6 @@ class BuildButtonIcon extends StatelessWidget {
           ),
         ],
       ),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-        10,
-      )),
     );
   }
 }

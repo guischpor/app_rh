@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:app_rh/widgets/menu_drawer/build_drawer.dart';
 import 'package:app_rh/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
@@ -18,14 +19,8 @@ class _MenuScreenState extends State<MenuScreen> {
 
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          'Home',
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.textColorBlue),
+      appBar: appBar(
+        titleBar: 'Home',
       ),
       drawer: BuildDrawer(),
       body: Container(
@@ -36,7 +31,10 @@ class _MenuScreenState extends State<MenuScreen> {
             return GridView.count(
               //shrinkWrap: true,
               crossAxisCount: 3,
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              padding: EdgeInsets.symmetric(
+                horizontal: 8.0,
+                vertical: 10,
+              ),
               children: <Widget>[
                 MenuItem(
                   onTap: _routeEventoReunioes,
@@ -124,46 +122,46 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 
   void _routeEventoReunioes() async {
-    Navigator.pushNamed(context, 'eventos_reunioes');
+    await Navigator.pushNamed(context, 'eventos_reunioes');
   }
 
   void _routeDemoPagamento() async {
-    Navigator.pushNamed(context, 'demo_pagamento');
+    await Navigator.pushNamed(context, 'demo_pagamento');
   }
 
   void _routeHolerites() async {
-    Navigator.pushNamed(context, 'holerite_emitidos');
+    await Navigator.pushNamed(context, 'holerite_emitidos');
   }
 
   void _routeFeriasFolgas() async {
-    Navigator.pushNamed(context, 'ferias_folgas');
+    await Navigator.pushNamed(context, 'ferias_folgas');
   }
 
   void _routeMarcadorPonto() async {
-    Navigator.pushNamed(context, 'marcador_ponto');
+    await Navigator.pushNamed(context, 'marcador_ponto');
   }
 
   void _routeMeuPonto() async {
-    Navigator.pushNamed(context, 'meu_ponto');
+    await Navigator.pushNamed(context, 'meu_ponto');
   }
 
   void _routeMinhasSolicit() async {
-    Navigator.pushNamed(context, 'minhas_solicitacoes');
+    await Navigator.pushNamed(context, 'minhas_solicitacoes');
   }
 
   void _routeEnvioDoc() async {
-    Navigator.pushNamed(context, 'envio_documentos');
+    await Navigator.pushNamed(context, 'envio_documentos');
   }
 
   void _routePendencias() async {
-    Navigator.pushNamed(context, 'pendencia');
+    await Navigator.pushNamed(context, 'pendencia');
   }
 
   void _routeContatosUteis() async {
-    Navigator.pushNamed(context, 'contatos_uteis');
+    await Navigator.pushNamed(context, 'contatos_uteis');
   }
 
   void _routeMeuPerfil() async {
-    Navigator.pushNamed(context, 'meu_perfil');
+    await Navigator.pushNamed(context, 'meu_perfil');
   }
 }

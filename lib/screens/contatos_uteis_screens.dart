@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:app_rh/widgets/build_card.contatos.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 //import 'package:http/http.dart' as http;
-import 'package:app_rh/models/ContatoModel.dart';
 
 class ContatosUteisScreen extends StatefulWidget {
   @override
@@ -18,14 +17,8 @@ class _ContatosUteisScreenState extends State<ContatosUteisScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          "Contatos Úteis",
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.iconColorBlue),
+      appBar:  appBar(
+        titleBar: 'Contatos Úteis',
       ),
       body: Container(
           padding: EdgeInsets.all(16),

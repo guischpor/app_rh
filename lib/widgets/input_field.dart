@@ -34,7 +34,7 @@ class InputField extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
       ),
-      child: TextField(
+      child: TextFormField(
         obscureText: obscureText,
         controller: controller,
         keyboardType: textInputType,
