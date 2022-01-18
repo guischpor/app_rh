@@ -55,43 +55,37 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: constrains.maxHeight * 0.12,
                 ),
-                InputField(
-                  hint: "Email",
-                  preffix: Icon(
-                    Icons.email,
-                    //color: styles.iconColorGrey,
+                Form(
+                  child: Column(
+                    children: [
+                      InputField(
+                        hint: "Email",
+                        preffix: Icon(
+                          Icons.email,
+                          //color: styles.iconColorGrey,
+                        ),
+                        textInputType: TextInputType.emailAddress,
+                      ),
+                      SizedBox(height: 15),
+                      InputField(
+                        hint: "Senha",
+                        preffix: Icon(
+                          Icons.lock,
+                          //color: styles.iconColorGrey,
+                        ),
+                        textInputType: TextInputType.text,
+                        obscureText: !_isVisible,
+                        suffix: CustomIconButton(
+                          radius: 32,
+                          iconData: _isVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          onTap: _visiblePassword,
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                    ],
                   ),
-                  textInputType: TextInputType.emailAddress,
-                  onChanged: (text) => {
-                    email = text,
-                  },
-                  obscureText: true,
-                  enable: true,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                InputField(
-                  hint: "Senha",
-                  preffix: Icon(
-                    Icons.lock,
-                    //color: styles.iconColorGrey,
-                  ),
-                  textInputType: TextInputType.text,
-                  onChanged: (text) => {
-                    password = text,
-                  },
-                  obscureText: _isVisible,
-                  enable: true,
-                  suffix: CustomIconButton(
-                    radius: 32,
-                    iconData:
-                        _isVisible ? Icons.visibility : Icons.visibility_off,
-                    onTap: _visiblePassword,
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
                 ),
                 Container(
                   height: 50,

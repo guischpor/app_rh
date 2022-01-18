@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:app_rh/widgets/build_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
 import 'package:app_rh/widgets/title_page.dart';
@@ -18,15 +19,7 @@ class _EsqueceuSenhaScreenState extends State<EsqueceuSenhaScreen> {
 
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          'Esqueceu a senha',
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.textColorBlue),
-      ),
+      appBar: appBar(titleBar: 'Esqueceu a senha'),
       body: Container(
         width: mediaQuery.size.width,
         height: mediaQuery.size.height,

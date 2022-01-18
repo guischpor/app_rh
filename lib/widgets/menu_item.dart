@@ -52,10 +52,11 @@ class MenuItem extends StatelessWidget {
                   Text(
                     title!,
                     style: TextStyle(
-                        color: colorTitle,
-                        fontWeight: FontWeight.bold,
-                        //fontSize: sizeTitle,
-                        fontSize: 13),
+                      color: colorTitle,
+                      fontWeight: FontWeight.bold,
+                      //fontSize: sizeTitle,
+                      fontSize: 13,
+                    ),
                     textAlign: TextAlign.center,
                   )
                 ],

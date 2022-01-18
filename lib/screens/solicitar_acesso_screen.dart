@@ -1,4 +1,5 @@
 import 'package:app_rh/styles/styles.dart';
+import 'package:app_rh/widgets/app_bar.dart';
 import 'package:app_rh/widgets/build_button.dart';
 import 'package:app_rh/widgets/input_field.dart';
 import 'package:app_rh/widgets/title_page.dart';
@@ -18,15 +19,7 @@ class _SolicitarAcessoScreenState extends State<SolicitarAcessoScreen> {
 
     return Scaffold(
       backgroundColor: styles.backgroundScreens,
-      appBar: AppBar(
-        title: Text(
-          "Solicitar acesso",
-          style: TextStyle(color: styles.textColorBlue),
-        ),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: styles.textColorBlue),
-      ),
+      appBar: appBar(titleBar: 'Solicitar Acesso'),
       body: Container(
         width: mediaQuery.size.width,
         height: mediaQuery.size.height,
